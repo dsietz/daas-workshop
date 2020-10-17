@@ -2,7 +2,7 @@
 
 Although this package was created as a library, we can make it dual binary and library by doing the following:
 
-1. Modifiy the Cargo.toml file to point to a binary during build time
+1. Modify the Cargo.toml file to point to a binary during build time
 
 ```text
 [[bin]]

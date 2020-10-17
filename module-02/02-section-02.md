@@ -20,7 +20,7 @@ running 0 tests
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
-By default, the manifest file \(Cargo.toml\) has only the **\[package\]** section which contains the meta data about the package. The **\[dependencies\]** section is empty. Since we create this package as a library, the **\[lib\]** section is "assumed" and the **src/lib.rs** file is the default location and file name of the library module.
+By default, the manifest file \(Cargo.toml\) has only the **\[package\]** section which contains the meta data about the package. The **\[dependencies\]** section is empty. Since we created this package as a library, the **\[lib\]** section is "assumed" and the **src/lib.rs** file is the default location and file name of the library module.
 
 We will overwrite the defaults by adding the following lines to the **Cargo.toml** file after the **\[package\]** section.
 

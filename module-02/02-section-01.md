@@ -4,14 +4,14 @@ Let first make sure the Rust is install correctly.
 
 ```text
 [user@localhost workspace]$ rustup -V
-rustup 1.22.1 (b01adbbc3 2020-07-08)
+rustup 1.18.3 (435397f48 2019-05-22)
 [user@localhost workspace]$ cargo -V
-cargo 1.47.0 (f3c7e066a 2020-08-28)
+cargo 1.35.0 (6f3e9c367 2019-04-04)
 [user@localhost workspace]$ rustup default stable
 info: using existing install for 'stable-x86_64-pc-windows-msvc'
 info: default toolchain set to 'stable-x86_64-pc-windows-msvc'
 
-  stable-x86_64-pc-windows-msvc unchanged - rustc 1.47.0 (18bf6b4f0 2020-10-07)
+  stable-x86_64-pc-windows-msvc unchanged - rustc 1.35.0 (3c235d560 2019-05-20)
 ```
 
 Create the _rust-daas_ package
