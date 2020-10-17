@@ -1,6 +1,6 @@
 # Introduction
 
-![Hands-On Experience with Data as a Service](../.gitbook/assets/cover_small.jpg)
+![Hands-On Experience with Data as a Service](.gitbook/assets/cover_small.jpg)
 
 ## Objective
 
