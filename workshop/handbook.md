@@ -1,10 +1,10 @@
 # Introduction
 
-![](../.gitbook/assets/cover_small.jpg)
+![Hands-On Experience with Data as a Service](../.gitbook/assets/cover_small.jpg)
 
 ## Objective
 
-> The goal of this workshop is to provide participants with the hands-on experience to build out a platofmr using the DaaS architecture pattern.
+> In this workshop we will walk-through and implement the key components of the Data as a Service architecture pattern by building out a simple real-time event driven online report.
 
 In this workshop you will learn:
 
