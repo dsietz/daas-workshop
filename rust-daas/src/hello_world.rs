@@ -1,5 +1,5 @@
 use super::*;
-use actix_web::{App, HttpRequest, HttpResponse };
+use actix_web::{HttpRequest, HttpResponse };
 use actix_web::http::{StatusCode};
 
 pub fn get_service_root() -> String {
@@ -13,16 +13,6 @@ pub fn get_service_path() -> String {
 pub fn index(_req: HttpRequest) -> HttpResponse {
     HttpResponse::build(StatusCode::OK)
     .body("Hello World!".to_string())
-}
-
-pub fn service() -> App {
-    let app = App::new()
-                .middleware(Logger::default())
-                .middleware(Logger::new("%a %{User-Agent}i"))
-                .resource(
-                    &get_service_path(), 
-                    |r| r.get().f(index));
-    app
 }
 
 mod tests {
