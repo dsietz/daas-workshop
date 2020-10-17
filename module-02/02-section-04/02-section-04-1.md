@@ -5,7 +5,9 @@
 We already have the binary file defined in the manifest file, but there are dependent packages that we will need to include in order to make it a RESTful service. In the **\[dependencies\]** section of the Cargo.toml file add the following packages.
 
 ```text
-hyper = "0.11.0"
-actix-web = "0.7"
+hyper = "0.13.8"
+actix-web = "3"
 ```
+
+
 
