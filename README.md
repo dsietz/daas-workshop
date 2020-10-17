@@ -25,4 +25,4 @@ __IMPORTANT:__ Participants need to ...
 ---
 
 ## Workshop Material
-+ [Workshop Manual](https://davidsietz.gitbook.io/workspace/)
++ [Workshop Manual](https://davidsietz.gitbook.io/daas-workshop/)
