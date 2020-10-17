@@ -19,7 +19,6 @@ mod tests {
 At the very top of the file, add the external web service crate \(package\)
 
 ```text
-extern crate hyper;
 extern crate actix_web;
 ```
 

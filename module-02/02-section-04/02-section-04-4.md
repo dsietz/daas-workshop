@@ -6,19 +6,16 @@ We start by first adding the `log` and `env_logger` crates to the Cargo.toml man
 
 ```text
 [dependencies]
-log = "0.4.0"
-env_logger = "0.6.1"
-hyper = "0.11.0"
-actix-web = "0.7"
-bytes = "0.4"
+log = "0.4"
+env_logger = "0.8"
+actix-web = "3"
 ```
 
-We place the `extern crate` declarations and `use` declarations for these crates at the top of our _**lib.rs**_ file \(so that they are ben shared in the project\).
+We place the `extern crate` declarations and `use` declarations for these crates at the top of our _**lib.rs**_ file \(so that they are shared in the project\).
 
 ```text
 extern crate log;
 extern crate env_logger;
-extern crate hyper;
 extern crate actix_web;
 
 use actix_web::middleware::Logger;
@@ -28,7 +25,7 @@ static VER: &str = "v1";
 pub mod hello_world;
 ```
 
-Now that we have the dependent crates included and declared, we add a new method named `service` after the index\(\) method in the _**hello\_world.rs**_ file in the /src directory to provide a runtime application that references the `index90` method for the defined resource path referenced by the `get_service_path()` method.
+Now that we have the dependent crates included and declared, we add a new method named `service` after the index\(\) method in the _**hello\_world.rs**_ file in the /src directory to provide a runtime application that references the `index()` method for the defined resource path referenced by the `get_service_path()` method.
 
 ```text
 pub fn service() -> App {
