@@ -1,0 +1,11 @@
+C:\workspace\daas-workshop\rust-daas\target\debug\deps\async_trait-24e1cc3c81f335c8.dll: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\args.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\expand.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\lifetime.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\parse.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\receiver.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\respan.rs
+
+C:\workspace\daas-workshop\rust-daas\target\debug\deps\async_trait-24e1cc3c81f335c8.d: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\args.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\expand.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\lifetime.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\parse.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\receiver.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\respan.rs
+
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\lib.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\args.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\expand.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\lifetime.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\parse.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\receiver.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\async-trait-0.1.41\src\respan.rs:

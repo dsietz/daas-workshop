@@ -1,0 +1,13 @@
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\heck-6b30257a1986bf65.rmeta: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\camel.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\kebab.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\mixed.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\shouty_snake.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\snake.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\title.rs
+
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\libheck-6b30257a1986bf65.rlib: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\camel.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\kebab.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\mixed.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\shouty_snake.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\snake.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\title.rs
+
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\heck-6b30257a1986bf65.d: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\camel.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\kebab.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\mixed.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\shouty_snake.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\snake.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\title.rs
+
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\lib.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\camel.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\kebab.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\mixed.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\shouty_snake.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\snake.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\heck-0.3.1\src\title.rs:

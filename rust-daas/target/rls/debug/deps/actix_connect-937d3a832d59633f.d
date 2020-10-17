@@ -1,0 +1,12 @@
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\actix_connect-937d3a832d59633f.rmeta: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src/lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\connect.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\connector.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\error.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\resolve.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\service.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\ssl\mod.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\uri.rs
+
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\actix_connect-937d3a832d59633f.d: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src/lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\connect.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\connector.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\error.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\resolve.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\service.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\ssl\mod.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\uri.rs
+
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src/lib.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\connect.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\connector.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\error.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\resolve.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\service.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\ssl\mod.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\actix-connect-2.0.0\src\uri.rs:

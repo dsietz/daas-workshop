@@ -1,0 +1,11 @@
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\widestring-78856be4b886cc4c.rmeta: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\platform\mod.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\platform\windows.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ucstr.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ucstring.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ustr.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ustring.rs
+
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\widestring-78856be4b886cc4c.d: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\platform\mod.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\platform\windows.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ucstr.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ucstring.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ustr.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ustring.rs
+
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\lib.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\platform\mod.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\platform\windows.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ucstr.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ucstring.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ustr.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\widestring-0.4.3\src\ustring.rs:

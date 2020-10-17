@@ -1,0 +1,14 @@
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\awc-d4fc109e7f32a81c.rmeta: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src/lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\builder.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\connect.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\error.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\frozen.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\request.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\response.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\sender.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\test.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\ws.rs
+
+c:\workspace\daas-workshop\rust-daas\target\rls\debug\deps\awc-d4fc109e7f32a81c.d: C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src/lib.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\builder.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\connect.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\error.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\frozen.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\request.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\response.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\sender.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\test.rs C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\ws.rs
+
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src/lib.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\builder.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\connect.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\error.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\frozen.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\request.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\response.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\sender.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\test.rs:
+C:\Users\dsietz\.cargo\registry\src\github.com-1ecc6299db9ec823\awc-2.0.0\src\ws.rs:
