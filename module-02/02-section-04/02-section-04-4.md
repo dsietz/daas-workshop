@@ -25,21 +25,40 @@ static VER: &str = "v1";
 pub mod hello_world;
 ```
 
-Now that we have the dependent crates included and declared, we add a new method named `service` after the index\(\) method in the _**hello\_world.rs**_ file in the /src directory to provide a runtime application that references the `index()` method for the defined resource path referenced by the `get_service_path()` method.
+Now that we have the dependent crates included and declared, we can now call the module in an executable.
+
+In the `hello-world.rs` file in the `bin` directory, rewrite the file so it looks like the following:
 
 ```text
-pub fn service() -> App {
-    let app = App::new()
-                .middleware(Logger::default())
-                .middleware(Logger::new("%a %{User-Agent}i"))
-                .resource(
-                    &get_service_path(), 
-                    |r| r.get().f(index));
-    app
+use daas::hello_world;
+use actix_web::{web, App, HttpServer};
+use actix_web::middleware::Logger;
+
+pub fn main() {
+    std::env::set_var("RUST_LOG", "actix_web=info");
+    env_logger::init();
+
+    HttpServer::new( || App::new()
+        .wrap(Logger::default())
+        .wrap(Logger::new("%a %{User-Agent}i"))
+        .route(
+            &hello_world::get_service_path(), 
+            web::get().to(hello_world::index)))
+    .bind("127.0.0.1:7999")
+    .expect("Can not bind to port 7999")
+    .run();
 }
 ```
 
+> Noteworthy: we call the module and its functionality by using the following code snippets:
+>
+> * `use daas::hello_world;`
+> * `&hello_world::get_service_path()`
+> * `hello_world::index`
+
 Make sure all your tests are still passing by using the `cargo test` command.
+
+
 
 We are now ready to start the RESTful service. There are 2 ways to start the service.
 
