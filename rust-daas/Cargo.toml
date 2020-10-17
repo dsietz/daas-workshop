@@ -1,0 +1,17 @@
+[package]
+name = "rust-daas"
+version = "0.1.0"
+authors = ["dsietz <davidsietz@yahoo.com>"]
+edition = "2018"
+
+[lib]
+name = "daas"
+path = "src/lib.rs"
+
+[[bin]]
+name = "hello_world"
+path = "src/bin/hello-world.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
