@@ -1,8 +1,12 @@
 # Section IV - executable
 
-Once we have created our service and all the tests have passed, we are ready to build out the executable and run it.
+Once we have created our service and all the tests have passed, we are ready to build out the executable and run our service.
 
-We start by first adding the `log` and `env_logger` crates to the Cargo.toml manifest.
+#### Add Log functionality
+
+> Since [Logs](https://12factor.net/logs) is eleventh factor in a 12 Factor Application, we will enable this attribute by implementing automated logging for this RESTful endpoint. by including the [`log`](https://crates.io/crates/log) and [`env_logger`](https://crates.io/crates/env_logger) creates.
+
+We start by first adding the `log` and `env_logger` crates to the `Cargo.toml` manifest.
 
 ```text
 [dependencies]
@@ -11,21 +15,31 @@ env_logger = "0.8"
 actix-web = "3"
 ```
 
-We place the `extern crate` declarations and `use` declarations for these crates at the top of our _**lib.rs**_ file \(so that they are shared in the project\).
+Next, we update the `lib.rs` file to include the logging creates and modules.
+
+We place the `extern crate` declarations for these crates at the top \(so that they are shared in the project\).
+
+```text
+extern crate log;
+extern crate env_logger;
+extern crate actix_web;
+```
+
+The final `lib.rs` file should look like this:
 
 ```text
 extern crate log;
 extern crate env_logger;
 extern crate actix_web;
 
-use actix_web::middleware::Logger;
-
 static VER: &str = "v1";
 
 pub mod hello_world;
 ```
 
-Now that we have the dependent crates included and declared, we can now call the module in an executable.
+#### Writing the executable
+
+Now that we have the dependent crates and modules declared in our library, we can call the service in an executable.
 
 In the `hello-world.rs` file in the `bin` directory, rewrite the file so it looks like the following:
 
@@ -58,7 +72,7 @@ pub fn main() {
 
 Make sure all your tests are still passing by using the `cargo test` command.
 
-
+#### Starting the service
 
 We are now ready to start the RESTful service. There are 2 ways to start the service.
 
@@ -79,7 +93,7 @@ Open your browser and navigate to the URL: [http://localhost:7999/hello/v1/](htt
 
 To stop the service, use `ctrl` + `c`.
 
-1. Running using the executable.
+   2. Running using the executable.
 
 ```text
 PS C:\workspace\rust-daas> cargo build

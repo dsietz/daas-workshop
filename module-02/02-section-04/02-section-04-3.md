@@ -158,6 +158,7 @@ Now that we have an understanding of how to write our tests, and then add the fu
 Our test will be the following.
 
 ```text
+#[cfg(test)]
 mod tests {
    use super::*;
    #[allow(unused_imports)]

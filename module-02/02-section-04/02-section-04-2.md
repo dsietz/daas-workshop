@@ -19,18 +19,10 @@ mod tests {
 At the very top of the file, add [declarations of dependencies ](https://doc.rust-lang.org/reference/items/extern-crates.html)to the external web service crates \(packages\) we will be using.
 
 ```text
-extern crate log;
-extern crate env_logger;
 extern crate actix_web;
 ```
 
-We now need to declare which modules in the extern crate we will be using. This is done with a [`use`](https://doc.rust-lang.org/reference/items/use-declarations.html) keyword.
-
-```text
-use actix_web::middleware::Logger
-```
-
-In top portion of the file \(where the global variables would be located after the `extern crates` and `use` sections\), add the following global variable.
+In top portion of the file \(where the global variables would be located after the `extern crates`\), add the following global variable.
 
 ```text
 static VER: &str = "v1";

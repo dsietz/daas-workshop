@@ -32,7 +32,7 @@ actix-web = "3"
 actix-rt = "1.1"
 ```
 
-Once the library has been included in the Manifest, we define which libraries are required in the _**web-service-tests**_ module by adding the following lines at the top of the _**web-service-tests.rs**_ file.
+Once the library has been included in the Manifest, we define which libraries are required in the _**web-service-tests**_ module by adding the following lines at the top of the `web-service-tests.rs` file.
 
 ```text
 extern crate actix_web;
@@ -66,7 +66,7 @@ async fn test_hello_world_ok() {
 }
 ```
 
-At this point the _**web-service-tests.rs**_ file should look like this:
+At this point the `web-service-tests.rs` file should look like this:
 
 ```text
 extern crate actix_web;
