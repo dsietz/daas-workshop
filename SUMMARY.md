@@ -20,7 +20,6 @@
   * [Section I - Constructing the daas Module](module-03/03-section-01/README.md)
     * [Section I - manifest](module-03/03-section-01/03-section-01-1.md)
     * [Section I - library](module-03/03-section-01/03-section-01-2.md)
-    * [Section I - module](module-03/03-section-01/03-section-01-3.md)
   * [Section II - Constructing the couchdb Module](module-03/03-section-02/README.md)
     * [Section II - manifest](module-03/03-section-02/03-section-02-1.md)
     * [Section II - library](module-03/03-section-02/03-section-02-2.md)
