@@ -6,7 +6,7 @@ We already have the binary file defined in the manifest file, but there are depe
 
 In the **\[dependencies\]** section of the `Cargo.toml` file add the following packages.
 
-```text
+```rust
 actix-web = "3"
 ```
 

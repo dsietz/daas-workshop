@@ -22,7 +22,7 @@ To create integrated tests, first create a new file named `web-service-tests.rs`
 
 In order to execute our service test, we will first need to include the `actix-rt` library to our project. We do this by adding the line `actix-rt = "1.1"` in the `[dev-dependencies]` section of the `Cargo.toml` file.
 
-```text
+```rust
 [dependencies]
 log = "0.4"
 env_logger = "0.8"
@@ -34,7 +34,7 @@ actix-rt = "1.1"
 
 Once the library has been included in the Manifest, we define which libraries are required in the _**web-service-tests**_ module by adding the following lines at the top of the `web-service-tests.rs` file.
 
-```text
+```rust
 extern crate actix_web;
 ```
 
@@ -42,14 +42,14 @@ The `extern` declarations specify the dependent crates \(or libraries\) that wil
 
 We then declare the bindings \(or shortcuts\) to a resources that will be using in the _**web-service-tests**_ module. This is done by adding the following `use` declarations below the `extern` crate declarations.
 
-```text
+```rust
 use daas::hello_world;
 use actix_web::{test, web, App};
 ```
 
 Now we can add the code for our **Hello World** service test, which is added below the `use` declarations.
 
-```text
+```rust
 #[actix_rt::test]
 async fn test_hello_world_ok() {
 
@@ -68,7 +68,7 @@ async fn test_hello_world_ok() {
 
 At this point the `web-service-tests.rs` file should look like this:
 
-```text
+```rust
 extern crate actix_web;
 
 use daas::hello_world;

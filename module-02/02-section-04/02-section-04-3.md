@@ -10,7 +10,7 @@ To begin, we will follow some basic TDD practices and build our tests first.
 
 At the bottom of the file, create an empty nested _testing_ module. This will be where we write our unit test for the hello\_world module. The use `super::*;` line imports all the functionality and variables from the parent `hello_world` module.
 
-```text
+```rust
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -19,7 +19,7 @@ mod tests {
 
 Our first test will be to return the service root. Add the following test in tests module below the `use super::;` line so it looks like the following.
 
-```text
+```rust
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -79,7 +79,7 @@ error: could not compile `rust-daas`.
 
 To make the test pass, we will add the `get_service_root()` function to the module.
 
-```text
+```rust
 use super::*;
 
 pub fn get_service_root() -> String {
@@ -126,7 +126,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
 We will do the same for the `get_service_path()` function.
 
-```text
+```rust
 use super::*;
 
 pub fn get_service_root() -> String {
@@ -157,7 +157,7 @@ Now that we have an understanding of how to write our tests, and then add the fu
 
 Our test will be the following.
 
-```text
+```rust
 #[cfg(test)]
 mod tests {
    use super::*;
@@ -187,7 +187,7 @@ mod tests {
 
 In order to make it pass, we will need to import the web service modules, and provide a `index()` function.
 
-```text
+```rust
 use actix_web::{HttpRequest, HttpResponse };
 use actix_web::http::{StatusCode};
 
@@ -199,7 +199,7 @@ pub fn index(_req: HttpRequest) -> HttpResponse {
 
 The final file should look like the following.
 
-```text
+```rust
 use super::*;
 use actix_web::{HttpRequest, HttpResponse };
 use actix_web::http::{StatusCode};

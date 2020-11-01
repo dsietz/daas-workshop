@@ -6,7 +6,7 @@ Because there are SDKs for the [DaaS](https://crates.io/crates/daas) pattern as 
 
 First, we need to include the dependent crates into the project. Add the following lines to the `[dependencies]` section in the `Cargo.toml` file
 
-```text
+```rust
 serde ="1.0"
 serde_derive = "1.0"
 serde_json = "1.0"

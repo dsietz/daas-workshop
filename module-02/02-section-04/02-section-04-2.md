@@ -6,7 +6,7 @@ The `lib.rs` file is our centralized library file. This file is where globally s
 
 **Remove** the test module section of code at the bottom of the file. This is where your integrated testing \(module dependencies\) would be tested to ensure the library if working as expected. However, we will be ignoring this level of testing for the purpose of this workshop.
 
-```text
+```rust
 #[cfg(test)]
 mod tests {
     #[test]
@@ -18,19 +18,19 @@ mod tests {
 
 At the very top of the file, add [declarations of dependencies ](https://doc.rust-lang.org/reference/items/extern-crates.html)to the external web service crates \(packages\) we will be using.
 
-```text
+```rust
 extern crate actix_web;
 ```
 
 In top portion of the file \(where the global variables would be located after the `extern crates`\), add the following global variable.
 
-```text
+```rust
 static VER: &str = "v1";
 ```
 
 At the bottom of the file, add the following module as part of the library.
 
-```text
+```rust
 pub mod hello_world;
 ```
 

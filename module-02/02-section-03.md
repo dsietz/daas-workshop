@@ -4,7 +4,7 @@ Although this package was created as a library, we can make it dual binary and l
 
 1. Modify the `Cargo.toml` file to point to a binary during build time
 
-```text
+```rust
 [[bin]]
 name = "hello_world"
 path = "src/bin/hello-world.rs"
@@ -13,7 +13,7 @@ path = "src/bin/hello-world.rs"
 1. Create a new **bin** folder in the **src** directory
 2. Create a new file `hello-world.rs` in the **bin** directory with the following code
 
-```text
+```rust
 pub fn main() {
     println!("Hello World");
 }

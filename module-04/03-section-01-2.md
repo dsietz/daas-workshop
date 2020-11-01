@@ -4,7 +4,7 @@
 
 We will also declare these dependencies in our share `src/lib.rs` library with macros in use.
 
-```text
+```rust
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate serde_json;
 #[macro_use] extern crate daas;

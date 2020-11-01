@@ -24,7 +24,7 @@ By default, the manifest file \(`Cargo.toml`\) has only the **\[package\]** sect
 
 We will overwrite the defaults by adding the following lines to the `Cargo.toml`file after the **\[package\]** section.
 
-```text
+```rust
 [lib]
 name = "daas"
 path = "src/lib.rs"

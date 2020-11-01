@@ -10,7 +10,7 @@ Once we have created our service and all the tests have passed, we are ready to 
 
 We start by first adding the `log` and `env_logger` crates to the `Cargo.toml` manifest.
 
-```text
+```rust
 [dependencies]
 log = "0.4"
 env_logger = "0.8"
@@ -21,7 +21,7 @@ Next, we update the `lib.rs` file to include the logging creates and modules.
 
 We place the `extern crate` declarations for these crates at the top \(so that they are shared in the project\).
 
-```text
+```rust
 extern crate log;
 extern crate env_logger;
 extern crate actix_web;
@@ -29,7 +29,7 @@ extern crate actix_web;
 
 The final `lib.rs` file should look like this:
 
-```text
+```rust
 extern crate log;
 extern crate env_logger;
 extern crate actix_web;
@@ -45,7 +45,7 @@ Now that we have the dependent crates and modules declared in our library, we ca
 
 In the `hello-world.rs` file in the `bin` directory, rewrite the file so it looks like the following:
 
-```text
+```rust
 use daas::hello_world;
 use actix_web::{web, App, HttpServer};
 use actix_web::middleware::Logger;
