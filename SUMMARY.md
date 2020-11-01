@@ -1,7 +1,6 @@
 # Table of contents
 
 * [Introduction](README.md)
-* [Introduction](handbook.md)
 * [Module I - Overview of the DaaS Pattern](module-01/README.md)
   * [Section I - The Overall Pattern](module-01/01-section-01.md)
   * [Section II - Data Sourcing](module-01/01-section-02.md)
