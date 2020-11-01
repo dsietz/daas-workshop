@@ -14,6 +14,7 @@
     * [Section IV - manifest](module-02/02-section-04/02-section-04-1.md)
     * [Section IV - library](module-02/02-section-04/02-section-04-2.md)
     * [Section IV - module](module-02/02-section-04/02-section-04-3.md)
+    * [Section IV - integrated testing](module-02/02-section-04/section-iv-integrated-testing.md)
     * [Section IV - executable](module-02/02-section-04/02-section-04-4.md)
 * [Module III - Building the Dependent Modules](module-03/README.md)
   * [Section I - Constructing the daas Module](module-03/03-section-01/README.md)

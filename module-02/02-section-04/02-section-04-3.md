@@ -1,14 +1,14 @@
 # Section IV - module
 
-> [hello\_world.rs](https://github.com/dsietz/rust-daas/blob/master/src/hello_world.rs)
+> [hello\_world.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/hello_world.rs)
 
-To create the module, create a new file named _**hello\_world.rs**_ in the **/src** directory.
+To create the module, create a new file named `hello_world.rs` in the **/src** directory.
 
 To begin, we will follow some basic TDD practices and build our tests first.
 
 > NOTE: This is not a TDD workshop, so we will ignore the complete practices and simply illustrate how it would be done.
 
-At the bottom of the file, create an empty nested _testing_ module. This will be where we write our unit test for the hello\_world module. The use `super::*;` line imports all the functionality and variables form the parent hello\_world module.
+At the bottom of the file, create an empty nested _testing_ module. This will be where we write our unit test for the hello\_world module. The use `super::*;` line imports all the functionality and variables from the parent `hello_world` module.
 
 ```text
 #[cfg(test)]
@@ -243,100 +243,4 @@ mod tests {
 ```
 
 Rerun the tests to make sure it all passes.
-
-We now have one last step, which is to add a function that will provide the service object. This is will not be covered by unit testing and is instead should be covered by integrated testing.
-
-To create integrated tests, first create a new file named _**web-service-tests.rs**_ in a new directory named _**tests**_ in the root path \(same level as the **src** directory\). Cargo will automatically parse the _**tests**_ directory and run any tests that are located in any files located here.
-
-```text
-.
-|-- .git
-|-- .gitignore
-|-- src
-     |-- bin
-          |-- hello-world.rs
-     |-- hello_world.rs
-     |-- lib.rs
-|-- tests
-     | -- web-service-tests.rs
-|-- Cargo.toml
-```
-
-In order to execute our service test, we will first need to include the `actix-rt` library to our project. We do this by adding the line `actix-rt = "1.1"` in the `[dev-dependencies]` section of the _**Cargo.toml**_ file.
-
-```text
-[dependencies]
-hyper = "0.13.8"
-actix-web = "3"
-
-[dev-dependencies]
-actix-rt = "1.1"
-```
-
-Once the library has been included in the Manifest, we define which libraries are required in the _**web-service-tests**_ module by adding the following lines at the top of the _**web-service-tests.rs**_ file.
-
-```text
-extern crate actix_web;
-```
-
-The `extern` declarations specify the dependent crates \(or libraries\) that will be used in the _**web-service-tests**_ module.
-
-We then declare the bindings \(or shortcuts\) to a resources that will be used in the _**web-service-tests**_ module. This is done by adding the following lines below the `extern` crate declarations.
-
-```text
-use daas::hello_world;
-use actix_web::{test, web, App};
-```
-
-Now we can add the code for our Hello World service test, which is added below the `use` declarations.
-
-```text
-#[actix_rt::test]
-async fn test_hello_world_ok() {
-
-    let mut app = test::init_service(App::new().route("/", web::get().to(hello_world::index))).await;
-    // create the request
-    let req = test::TestRequest::with_header("content-type", "text/plain").to_request();
-    // call the service
-    let resp = test::call_service(&mut app, req).await;
-    assert!(resp.status().is_success());
-
-    // read response body
-    let body = test::read_body(resp).await;
-    assert_eq!(body, "Hello World!".to_string());
-}
-```
-
-At this point the _**web-service-tests.rs**_ file should look like this:
-
-```text
-extern crate actix_web;
-
-use daas::hello_world;
-use actix_web::{test, web, App};
-
-#[actix_rt::test]
-async fn test_hello_world_ok() {
-
-    let mut app = test::init_service(App::new().route("/", web::get().to(hello_world::index))).await;
-    // create the request
-    let req = test::TestRequest::with_header("content-type", "text/plain").to_request();
-    // call the service
-    let resp = test::call_service(&mut app, req).await;
-    assert!(resp.status().is_success());
-
-    // read response body
-    let body = test::read_body(resp).await;
-    assert_eq!(body, "Hello World!".to_string());
-}
-```
-
-Try running your test with the `cargo test` command. There should now be a line in the results referencing that the `web_service_tests` has run.
-
-```text
-     Running target\debug\deps\web_service_tests-664800ae8a37eeb0.exe
-
-running 1 test
-test test_hello_world_ok ... ok
-```
 
