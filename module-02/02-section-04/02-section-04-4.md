@@ -105,6 +105,8 @@ Whenever you use the `cargo build` command, it places the created executable in 
 
 Since it is an executable, simple run the executable from the command terminal, and make the same URL call from the browser.
 
+> NOTE: Example below is for Windows.
+
 ```text
 C:\workspace\demo\rust-daas\target\debug>hello_world.exe
 [2019-10-23T14:49:19Z INFO  actix_web::middleware::logger] 127.0.0.1:65360 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36
