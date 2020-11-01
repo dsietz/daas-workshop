@@ -1,4 +1,4 @@
-# Section V - testing
+# Section V - service testing
 
 > [rust-daas.postman\_collection.json](https://github.com/dsietz/rust-daas/blob/master/tests/rust-daas.postman_collection.json)
 

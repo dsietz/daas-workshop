@@ -12,5 +12,5 @@ Based on these system interactions, and applying Object Oriented Design, we quic
 
 Each of these modules will act as abstraction layers for our services to interact with the infrastructural components.
 
-Fortunately, we won't need to build these modules.
+Fortunately, we won't need to build these modules. Because there are SDKs for the [DaaS](https://crates.io/crates/daas) pattern as well as [Privacy by Design](https://crates.io/crates/pbd), we will not need to build out the underlying _object wrappers,_ _data model_ support, or logic to implement common _privacy strategies_.
 
