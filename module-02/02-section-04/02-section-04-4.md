@@ -48,19 +48,20 @@ use daas::hello_world;
 use actix_web::{web, App, HttpServer};
 use actix_web::middleware::Logger;
 
-pub fn main() {
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
 
-    HttpServer::new( || App::new()
+    HttpServer::new(|| App::new()
         .wrap(Logger::default())
         .wrap(Logger::new("%a %{User-Agent}i"))
         .route(
             &hello_world::get_service_path(), 
             web::get().to(hello_world::index)))
-    .bind("127.0.0.1:7999")
-    .expect("Can not bind to port 7999")
-    .run();
+        .bind("127.0.0.1:7999")?
+        .run()
+        .await
 }
 ```
 
@@ -76,7 +77,7 @@ Make sure all your tests are still passing by using the `cargo test` command.
 
 We are now ready to start the RESTful service. There are 2 ways to start the service.
 
-1. Running using `cargo run` command
+1. Running using `cargo run` command while developing \(local service testing\)
 
 ```text
 PS C:\workspace\rust-daas> cargo run
@@ -84,11 +85,11 @@ PS C:\workspace\rust-daas> cargo run
      Running `target\debug\hello_world.exe`
 ```
 
-Open your browser and navigate to the URL: [http://localhost:7999/hello/v1/](http://localhost:7999/hello/v1/). You should see the message `Hello World!` On the command line, you will notice that the calls are being logged and printed to the consule.
+Open your browser and navigate to the URL: [http://localhost:7999/hello/v1/](http://localhost:7999/hello/v1/). You should see the message `Hello World!` On the command line, you will notice that the calls are being logged and printed to the console.
 
 ```text
-[2019-10-23T14:40:08Z INFO  actix_web::middleware::logger] 127.0.0.1:65211 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36
-[2019-10-23T14:40:08Z INFO  actix_web::middleware::logger] 127.0.0.1:65211 "GET /hello/v1/ HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" 0.000000
+[2020-11-01T16:49:19Z INFO  actix_web::middleware::logger] 127.0.0.1:53702 Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0
+[2020-11-01T16:49:19Z INFO  actix_web::middleware::logger] 127.0.0.1:53702 "GET /hello/v1/ HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0" 0.001153
 ```
 
 To stop the service, use `ctrl` + `c`.
@@ -100,7 +101,7 @@ PS C:\workspace\rust-daas> cargo build
     Finished dev [unoptimized + debuginfo] target(s) in 0.37s
 ```
 
-Whenever you use the `cargo build` command, it places the created executable in the target/debug directory with the same name that was defined in the Cargo.toml manifest, \(e.g.: C:\workspace\rust-daas\target\debug\hello\_world.exe\)
+Whenever you use the `cargo build` command, it places the created executable in the target/debug directory with the same name that was defined in the Cargo.toml manifest.
 
 Since it is an executable, simple run the executable from the command terminal, and make the same URL call from the browser.
 
