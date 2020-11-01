@@ -46,7 +46,7 @@ Now that we have the dependent crates and modules declared in our library, we ca
 In the `hello-world.rs` file in the `bin` directory, rewrite the file so it looks like the following:
 
 ```rust
-use daas::hello_world;
+use myapp::hello_world;
 use actix_web::{web, App, HttpServer};
 use actix_web::middleware::Logger;
 
@@ -69,7 +69,7 @@ async fn main() -> std::io::Result<()> {
 
 > Noteworthy: we call the module and its functionality by using the following code snippets:
 >
-> * `use daas::hello_world;`
+> * `use myapp::hello_world;`
 > * `&hello_world::get_service_path()`
 > * `hello_world::index`
 

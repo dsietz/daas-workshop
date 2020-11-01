@@ -22,6 +22,7 @@
   * [Section III - library](module-04/03-section-01-2.md)
   * [Section IV - executable](module-04/04-section-04/README.md)
     * [Section IV - tests](module-04/04-section-04/section-iv-tests.md)
+    * [Section IV - RESTful endpoint](module-04/04-section-04/section-iv-restful-endpoint.md)
   * [Section V - testing](module-04/04-section-05.md)
 * [Module V - Building a Microservice for Processing the Sourced Data](module-05/README.md)
   * [Section I - manifest](module-05/05-section-01.md)

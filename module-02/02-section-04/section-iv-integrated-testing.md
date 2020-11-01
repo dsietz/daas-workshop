@@ -43,7 +43,7 @@ The `extern` declarations specify the dependent crates \(or libraries\) that wil
 We then declare the bindings \(or shortcuts\) to a resources that will be using in the _**web-service-tests**_ module. This is done by adding the following `use` declarations below the `extern` crate declarations.
 
 ```rust
-use daas::hello_world;
+use myapp::hello_world;
 use actix_web::{test, web, App};
 ```
 

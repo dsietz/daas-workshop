@@ -26,7 +26,7 @@ We will overwrite the defaults by adding the following lines to the `Cargo.toml`
 
 ```rust
 [lib]
-name = "daas"
+name = "myapp"
 path = "src/lib.rs"
 ```
 
