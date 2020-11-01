@@ -103,7 +103,7 @@ PS C:\workspace\rust-daas> cargo build
     Finished dev [unoptimized + debuginfo] target(s) in 0.37s
 ```
 
-Whenever you use the `cargo build` command, it places the created executable in the target/debug directory with the same name that was defined in the Cargo.toml manifest.
+Whenever you use the `cargo build` command, it places the created executable in the target/debug directory with the same name that was defined in the `Cargo.toml` manifest.
 
 Since it is an executable, simple run the executable from the command terminal, and make the same URL call from the browser.
 
