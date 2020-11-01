@@ -14,7 +14,7 @@ info: default toolchain set to 'stable-x86_64-pc-windows-msvc'
   stable-x86_64-pc-windows-msvc unchanged - rustc 1.47.0 (18bf6b4f0 2020-10-07)
 ```
 
-Create the `rust-daas`package
+Create the _rust-daas_ package
 
 ```text
 [user@localhost workspace]$ cargo +stable new rust-daas --lib

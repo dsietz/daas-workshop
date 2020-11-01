@@ -2,7 +2,7 @@
 
 > [lib.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/lib.rs)
 
-The lib.rs file is our centralized library file. This file is where globally shared functions, constants and variables are located. It is also where we include modules that make up the library.
+The `lib.rs` file is our centralized library file. This file is where globally shared functions, constants and variables are located. It is also where we include modules that make up the library.
 
 **Remove** the test module section of code at the bottom of the file. This is where your integrated testing \(module dependencies\) would be tested to ensure the library if working as expected. However, we will be ignoring this level of testing for the purpose of this workshop.
 
