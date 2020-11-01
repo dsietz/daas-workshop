@@ -1,5 +1,7 @@
 # Section IV - executable
 
+[hello-world.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/hello-world.rs)
+
 Once we have created our service and all the tests have passed, we are ready to build out the executable and run our service.
 
 #### Add Log functionality
