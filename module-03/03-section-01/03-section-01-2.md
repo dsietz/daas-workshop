@@ -1,15 +1,17 @@
 # Section I - library
 
-> [lib.rs](https://github.com/dsietz/rust-daas/blob/master/src/lib.rs)
+> [lib.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/lib.rs)
 
 We will also declare these dependencies in our share `src/lib.rs` library with macros in use.
 
 ```text
 #[macro_use] extern crate serde_derive;
 #[macro_use] extern crate serde_json;
+#[macro_use] extern crate daas;
+extern crate pbd;
 ```
 
-We also need to provide a share function `get_unix_now()` that teh daas module will need. So we declare the `use` of the dependencies and the function itself.
+We also need to provide a share function `get_unix_now()` that the daas module will need. So we declare the `use` of the dependencies and the function itself.
 
 ```text
 use std::str;
