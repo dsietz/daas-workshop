@@ -15,6 +15,7 @@ pub fn index(_req: HttpRequest) -> HttpResponse {
     .body("Hello World!".to_string())
 }
 
+#[cfg(test)]
 mod tests {
    use super::*;
    #[allow(unused_imports)]
