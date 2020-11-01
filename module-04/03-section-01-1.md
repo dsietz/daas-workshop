@@ -1,4 +1,4 @@
-# Section I - manifest
+# Section II - manifest
 
 > [Cargo.toml](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/Cargo.toml)
 
