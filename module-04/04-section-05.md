@@ -18,12 +18,3 @@ The response payload should be the following:
 }
 ```
 
-> **Note** If you get an error message stating "Could not broker document", then make sure the Kafka service is running.
-
-> _TIP_ If you start up a consumer \(e.g.: [Quick Start - Step 5](https://kafka.apache.org/quickstart#quickstart_consume)\), you should see the brokered DaaS object.
->
-> ```text
-> [kafka@brokerserver kafka_2.12-2.3.0]# bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic order-clothing-iStore --from-beginning
-> {"_id":"order|clothing|iStore|8003","_rev":"2-c295ee927aff853b50814447981173e0","source_name":"iStore","source_uid":8003,"category":"order","subcategory":"clothing","author":"istore_app","process_ind":false,"last_updated":1572021078,"data_obj":{"name":"high heals","status":"new"}}
-> ```
-
