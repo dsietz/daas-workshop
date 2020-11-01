@@ -2,7 +2,7 @@
 
 Although this package was created as a library, we can make it dual binary and library by doing the following:
 
-1. Modify the Cargo.toml file to point to a binary during build time
+1. Modify the `Cargo.toml` file to point to a binary during build time
 
 ```text
 [[bin]]
@@ -11,7 +11,7 @@ path = "src/bin/hello-world.rs"
 ```
 
 1. Create a new **bin** folder in the **src** directory
-2. Create a new file **hello-world.rs** in the **bin** directory with the following code
+2. Create a new file `hello-world.rs` in the **bin** directory with the following code
 
 ```text
 pub fn main() {

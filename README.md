@@ -1,12 +1,10 @@
----
-description: Hands-On experience building a Data as a Service Platform
----
-
-# Hands-On experience building a Data as a Service Platform
-
-![](.gitbook/assets/cover_small.jpg)
+# Introduction
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+## Hands-On experience building a Data as a Service Platform
+
+In this workshop we will walk-through and implement the key components of the Data as a Service architecture pattern by building out a simple real-time event driven online report.
 
 **IMPORTANT:** Participants need to ...
 
