@@ -71,7 +71,7 @@ At this point the `web-service-tests.rs` file should look like this:
 ```rust
 extern crate actix_web;
 
-use daas::hello_world;
+use myapp::hello_world;
 use actix_web::{test, web, App};
 
 #[actix_rt::test]
