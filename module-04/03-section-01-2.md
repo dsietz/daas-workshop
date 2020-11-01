@@ -1,6 +1,6 @@
 # Section III - executable
 
-> sourcing.rs
+> [sourcing.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/sourcing.rs)
 
 Since the SDKs contain all the modules we will need for our web service, we can go right to writing our executable: `src/bin/sourcing.rs`.
 
@@ -19,6 +19,7 @@ use daas::service::extractor::{Base64Author};
 use pbd::dua::middleware::actix::*;
 use pbd::dtc::middleware::actix::*;
 use actix_web::{web, App, HttpServer};
+use actix_web::middleware::Logger;
 ```
 
 Finally, we write the main function that will be called.
@@ -27,10 +28,12 @@ Finally, we write the main function that will be called.
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     std::env::set_var("DAAS_LOCAL_STORAGE", "C:\\tmp");
-    std::env::set_var("RUST_LOG", "warn");
+    std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
     
-    HttpServer::new(|| App::new()
+    HttpServer::new(|| App::new()        
+            .wrap(Logger::default())
+            .wrap(Logger::new("%a %{User-Agent}i"))
             .wrap(DUAEnforcer::default())
             .wrap(DTCEnforcer::default())
             .service(
@@ -40,18 +43,20 @@ async fn main() -> std::io::Result<()> {
                 web::resource(&DaaSListener::get_service_path()).route(web::post().to(DaaSListener::index::<Base64Author>))
             )
         )
-    .bind("localhost:8088")
+    .bind("localhost:8000")
     .unwrap()
     .run()
     .await
 }
 ```
 
-Since the DaaS Listener that consumes the source data is loosely coupled to the broker, it is important that we keep a local copy of the DaaSDocument in case conneciton to the broker is lost. We configure the directory path the local storage using the environment variable `DAAS_LOCAL_STORAGE`. If this is not set, the DaaSListener module will use the system's default temporary directory.
+Since the DaaS Listener that consumes the source data is loosely coupled to the broker, it is important that we keep a local copy of the DaaSDocument in case connection to the broker is lost. We configure the directory path the local storage using the environment variable `DAAS_LOCAL_STORAGE`. If this is not set, the DaaSListener module will use the system's default temporary directory.
 
 ```rust
 std::env::set_var("DAAS_LOCAL_STORAGE", "C:\\tmp");
 ```
+
+> NOTE: Implementing the `Logger` middleware may violate privacy startegies depending on the exposure and storage of the log entries.
 
 When you are finished, the `sourcing.rs` file should look like this:
 
@@ -64,14 +69,17 @@ use daas::service::extractor::{Base64Author};
 use pbd::dua::middleware::actix::*;
 use pbd::dtc::middleware::actix::*;
 use actix_web::{web, App, HttpServer};
+use actix_web::middleware::Logger;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     std::env::set_var("DAAS_LOCAL_STORAGE", "C:\\tmp");
-    std::env::set_var("RUST_LOG", "warn");
+    std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
     
-    HttpServer::new(|| App::new()
+    HttpServer::new(|| App::new()        
+            .wrap(Logger::default())
+            .wrap(Logger::new("%a %{User-Agent}i"))
             .wrap(DUAEnforcer::default())
             .wrap(DTCEnforcer::default())
             .service(
@@ -81,7 +89,7 @@ async fn main() -> std::io::Result<()> {
                 web::resource(&DaaSListener::get_service_path()).route(web::post().to(DaaSListener::index::<Base64Author>))
             )
         )
-    .bind("localhost:8088")
+    .bind("localhost:8000")
     .unwrap()
     .run()
     .await
