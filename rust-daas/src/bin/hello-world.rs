@@ -1,4 +1,4 @@
-use daas::hello_world;
+use myapp::hello_world;
 use actix_web::{web, App, HttpServer};
 use actix_web::middleware::Logger;
 

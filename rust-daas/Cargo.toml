@@ -5,19 +5,27 @@ authors = ["dsietz <davidsietz@yahoo.com>"]
 edition = "2018"
 
 [lib]
-name = "daas"
+name = "myapp"
 path = "src/lib.rs"
 
 [[bin]]
 name = "hello_world"
 path = "src/bin/hello-world.rs"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[[bin]]
+name = "myapp_sourcing"
+path = "src/bin/sourcing.rs"
 
 [dependencies]
 log = "0.4"
 env_logger = "0.8"
 actix-web = "3"
+serde ="1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+#daas = "0.2.0"
+daas = { path = "C:\\workspace\\daas-sdk" }
+pbd = "0.3.0"
 
 [dev-dependencies]
 actix-rt = "1.1"
