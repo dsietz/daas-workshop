@@ -1,6 +1,6 @@
 # Section V - service testing
 
-> daas-workshop.postman\_collection.json
+> [daas-workshop.postman\_collection.json](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/tests/postman/daas-workshop.postman_collection.json)
 
 A very powerful feature of the `actix-web` crate is the built in service testing that comes out-of-the-box. We utilized this feature in `web-service-tests.rs` as part of our integrated testing. However, we don't need to test the code for the service modules since they have already been tested in the SDKs. Instead, we will smoke test the the RESTful service is working correctly by using an external utility - [Postman](https://github.com/dsietz/daas-workshop/tree/4242659a82c3d0bb5f75f091e77cac8ea4a369c2/docs/reference-postman.md).
 
