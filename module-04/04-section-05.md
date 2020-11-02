@@ -18,3 +18,9 @@ The response payload should be the following:
 }
 ```
 
+> TIP: You can verify that the data was converted to a DaaSDocument and sent to the Kafka broker by running a Kafka consumer and monitoring the `genesis` topic.
+
+```text
+$ .\bin\kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic genesis --from-beginning
+```
+
