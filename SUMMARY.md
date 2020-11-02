@@ -27,6 +27,7 @@
   * [Section II - library](module-05/05-section-02.md)
   * [Section III - module](module-05/05-section-03.md)
   * [Section IV - executable](module-05/05-section-04.md)
+* [Module V - Building a Provisioning Microservice](module-v-building-a-provisioning-microservice.md)
 * [Module VI - Building a RESTful Endpoint for Publishing Reporting Data](module-06/README.md)
   * [Section I - manifest](module-06/06-section-01.md)
   * [Section II - library](module-06/06-section-02.md)
