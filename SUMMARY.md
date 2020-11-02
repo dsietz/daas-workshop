@@ -22,7 +22,7 @@
   * [Section III - executable](module-04/03-section-01-2.md)
   * [Section IV - starting the service](module-04/section-iv-starting-the-service.md)
   * [Section V - service testing](module-04/04-section-05.md)
-* [Module V - Building a Genesis Microservice for Processing the Sourced Data](module-05/README.md)
+* [Module IV - Building a Genesis Microservice for Processing the Sourced Data](module-05/README.md)
   * [Section I - manifest](module-05/05-section-01.md)
   * [Section II - library](module-05/05-section-02.md)
   * [Section III - module](module-05/05-section-03.md)
