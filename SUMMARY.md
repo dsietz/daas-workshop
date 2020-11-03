@@ -1,7 +1,9 @@
 # Table of contents
 
 * [Hands-On experience building a Data as a Service Platform](README.md)
-* [Setting up you machines](setting-up-you-machines.md)
+* [Set Up](setting-up-you-machines.md)
+* [Creating a Workstation](creating-a-workstation.md)
+* [Installing Tools](installing-tools.md)
 * [Module I - Overview of the DaaS Pattern](module-01/README.md)
   * [Section I - The Overall Pattern](module-01/01-section-01.md)
   * [Section II - Data Sourcing](module-01/01-section-02.md)

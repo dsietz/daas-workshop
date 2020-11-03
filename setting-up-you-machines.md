@@ -1,18 +1,8 @@
-# Setting up you machines
+---
+description: Instructions for setting up a virtual workstation in AWS Cloud9.
+---
 
-```text
-aws s3 cp s3://iapp-archconf-workshop/workshop.sh workshop.sh
-sudo chmod +x workshop.sh
-./workshop.sh
-```
+# Set Up
 
-Let's start up Kafka.
-
-We will first need to start Zookeeper.
-
-> NOTE: Use a new terminal
-
-```text
-./zookeeper-start.sh
-```
+In this workshop, we will be performing hand-on coding and running our applications. This will require that we have workstations with all the tools and services setup and configured in the same manner.
 
