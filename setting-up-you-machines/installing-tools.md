@@ -18,3 +18,7 @@ sudo chmod +x workshop.sh
 ./workshop.sh
 ```
 
+```text
+source $HOME/.cargo/env
+```
+
