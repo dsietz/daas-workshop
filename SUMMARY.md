@@ -29,7 +29,7 @@
   * [Section V - service testing](module-04/04-section-05.md)
 * [Module IV - Building a Genesis Microservice for Processing the Sourced Data](module-05/README.md)
   * [Section I - manifest](module-05/05-section-01.md)
-  * [Section II - library](module-05/05-section-02.md)
+  * [Section II - library \(old\)](module-05/05-section-02.md)
   * [Section III - module](module-05/05-section-03.md)
   * [Section IV - executable](module-05/05-section-04.md)
 * [Module V - Building a Provisioning Microservice](module-v-building-a-provisioning-microservice.md)

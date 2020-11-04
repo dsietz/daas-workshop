@@ -1,4 +1,4 @@
-# Section II - library
+# Section II - library \(old\)
 
 > [lib.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/lib.rs)
 
