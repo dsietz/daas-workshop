@@ -16,6 +16,10 @@ path = "src/bin/hello-world.rs"
 name = "myapp_sourcing"
 path = "src/bin/sourcing.rs"
 
+[[bin]]
+name = "myapp_genesis"
+path = "src/bin/genesis.rs"
+
 [dependencies]
 log = "0.4"
 env_logger = "0.8"
@@ -25,6 +29,8 @@ serde_derive = "1.0"
 serde_json = "1.0"
 daas = "0.2.0"
 pbd = "0.3.0"
+rusoto_core = "0.43"
+kafka = "0.8"
 
 [dev-dependencies]
 actix-rt = "1.1"
