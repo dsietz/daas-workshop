@@ -68,6 +68,40 @@ ArchConfWorkshopUser:~/environment $ aws s3api list-objects --bucket iapp-archco
 Try to look at the versions
 
 ```text
-aws s3api list-object-versions --bucket iapp-archconf-workshop --prefix genesis --query 'Contents[].{Key: Key, Size: Size}'
+aws s3api list-object-versions --bucket iapp-archconf-workshop --prefix genesis
+```
+
+```text
+{
+    "Versions": [
+        {
+            "LastModified": "2020-11-04T22:03:06.000Z", 
+            "VersionId": "PMQQBJ6T2ve8qAD45J.ELqMSpNJX6.fW", 
+            "ETag": "\"295472db3011b179b342b010fcee20e3\"", 
+            "StorageClass": "STANDARD", 
+            "Key": "genesis/order~clothing~iStore~5000.daas", 
+            "IsLatest": true, 
+            "Size": 706
+        }, 
+        {
+            "LastModified": "2020-11-04T21:28:29.000Z", 
+            "VersionId": "gbNzGC825DGEgAcfNJgxDOFt702q.jlZ", 
+            "ETag": "\"efca02daba2596ea31ed02544eed7f3e\"", 
+            "StorageClass": "STANDARD", 
+            "Key": "genesis/order~clothing~iStore~5000.daas", 
+            "IsLatest": false, 
+            "Size": 706
+        }, 
+        {
+            "LastModified": "2020-11-04T21:28:29.000Z", 
+            "VersionId": "0jR5YYDmN4REFMskajl.NrerSR3E0iUr", 
+            "ETag": "\"714eddb4c1424840d96d319f537cf9a3\"", 
+            "StorageClass": "STANDARD", 
+            "Key": "genesis/order~clothing~iStore~5000.daas", 
+            "IsLatest": false, 
+            "Size": 706
+        }
+    ]
+}
 ```
 
