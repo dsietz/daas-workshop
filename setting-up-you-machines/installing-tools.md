@@ -22,3 +22,28 @@ sudo chmod +x workshop.sh
 source $HOME/.cargo/env
 ```
 
+### Step 2
+
+Let verify that Rust is installed correctly. Part of the `workshop` script was to create a `dummy` project, which should now appear as a directory in your left panel \(file tree\).
+
+Let's run the `dummy` application.
+
+```text
+cd dummy && cargo run
+```
+
+You should see the following:
+
+```text
+ArchConfWorkshopUser:~/environment $ cd dummy && cargo run                                                                                                                                 
+    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
+     Running `target/debug/dummy`
+Hello, world!
+```
+
+Let's change back the main directory.
+
+```text
+cd ..
+```
+
