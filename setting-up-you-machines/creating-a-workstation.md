@@ -8,9 +8,7 @@ First login to the AWS Console. Open your browser and navigate to teh AWS Cloud9
 >
 > IMPORTANT - Make sure you are in the `US East N. Virginia (us-east-1)` region
 
-![](../.gitbook/assets/cloud9-00.jpg)
-
-Click on the Create Environment button
+Click on the `Create Environment` button
 
 ### Step 1
 
