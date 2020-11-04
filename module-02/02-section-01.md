@@ -23,6 +23,10 @@ info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
 Create the `rust-daas`package
 
 ```text
+cargo +stable new rust-daas --lib
+```
+
+```text
 ArchConfWorkshopUser:~/environment $ cargo +stable new rust-daas --lib
      Created library `rust-daas` package
 ```

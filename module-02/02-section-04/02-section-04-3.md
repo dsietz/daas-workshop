@@ -100,27 +100,26 @@ mod tests {
 If we rerun our test, it will now pass.
 
 ```text
-[user@localhost rust-daas]$ cargo test
-   Compiling rust-daas v0.1.0 (C:\tmp\rust-daas)
-    Finished dev [unoptimized + debuginfo] target(s) in 1.60s
-     Running target\debug\deps\daas-dafe2c98359dbcd2.exe
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo test
+   Compiling rust-daas v0.1.0 (/home/ec2-user/environment/rust-daas)
+    Finished test [unoptimized + debuginfo] target(s) in 0.89s
+     Running target/debug/deps/myapp-deab36d0847aeb68
 
 running 1 test
 test hello_world::tests::test_get_service_root ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
-     Running target\debug\deps\hello_world-f32c48dd7c679e2e.exe
+     Running target/debug/deps/hello_world-c97b0cb1d60cefb2
 
 running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
-   Doc-tests daas
+   Doc-tests myapp
 
 running 0 tests
 
-test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
