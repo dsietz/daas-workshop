@@ -53,3 +53,21 @@ To confirm that the DaaSDocument has been stored in the S3 bucket, run the follo
 aws s3api list-objects --bucket iapp-archconf-workshop --prefix genesis --query 'Contents[].{Key: Key, Size: Size}'
 ```
 
+A json array should be returned with the file\(s\) `.daas` 
+
+```text
+ArchConfWorkshopUser:~/environment $ aws s3api list-objects --bucket iapp-archconf-workshop --prefix genesis --query 'Contents[].{Key: Key, Size: Size}'                                                                                                                      
+[
+    {
+        "Key": "genesis/order~clothing~iStore~5000.daas", 
+        "Size": 706
+    }
+]
+```
+
+Try to look at the versions
+
+```text
+aws s3api list-object-versions --bucket iapp-archconf-workshop --prefix genesis --query 'Contents[].{Key: Key, Size: Size}'
+```
+
