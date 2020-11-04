@@ -82,16 +82,16 @@ We are now ready to start the RESTful service. There are 2 ways to start the ser
 1. Running using `cargo run` command while developing \(local service testing\)
 
 ```text
-PS C:\workspace\rust-daas> cargo run
-    Finished dev [unoptimized + debuginfo] target(s) in 0.37s
-     Running `target\debug\hello_world.exe`
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run
+    Finished dev [unoptimized + debuginfo] target(s) in 0.10s
+     Running `target/debug/hello_world`
 ```
 
 Open your browser and navigate to the URL: `http://localhost:7999/hello/v1/`. You should see the message `Hello World!` On the command line, you will notice that the calls are being logged and printed to the console.
 
 ```text
-[2020-11-01T16:49:19Z INFO  actix_web::middleware::logger] 127.0.0.1:53702 Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0
-[2020-11-01T16:49:19Z INFO  actix_web::middleware::logger] 127.0.0.1:53702 "GET /hello/v1/ HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:82.0) Gecko/20100101 Firefox/82.0" 0.001153
+[2020-11-04T18:36:43Z INFO  actix_web::middleware::logger] 127.0.0.1:50882 curl/7.61.1
+[2020-11-04T18:36:43Z INFO  actix_web::middleware::logger] 127.0.0.1:50882 "GET /hello/v1/ HTTP/1.1" 200 12 "-" "curl/7.61.1" 0.000212
 ```
 
 To stop the service, use `ctrl` + `c`.
