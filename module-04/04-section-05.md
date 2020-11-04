@@ -24,6 +24,8 @@ The response payload should be the following:
 }
 ```
 
+### Kafka genesis Topic
+
 > TIP: You can verify that the data was converted to a DaaSDocument and sent to the Kafka broker by running a Kafka consumer and monitoring the `genesis` topic. We recommend using a new terminal.
 
 ```text
@@ -108,4 +110,12 @@ $./kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9
    ]
 }
 ```
+
+### Local Storage
+
+Since the DaaS pattern is meant to be a loosely coupled architecture and built-in support of a distributed model, the `DaaSListener` automatically stores a copy of the DaaSDocument in  local storage in case the broker is not available and the records need to be rerun at a later time.
+
+After the first call has been made to the sourcing RESTful service, a directory named `local_storage` till have been created in the main path, \(in this case `ArchConfWorkshopUser:~/environment`\). 
+
+![](../.gitbook/assets/cloud9-06.jpg)
 
