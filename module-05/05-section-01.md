@@ -10,3 +10,5 @@ name = "myapp_genesis"
 path = "src/bin/genesis.rs"
 ```
 
+Next, we need to include the dependent crates into the project. Add the following lines to the `[dependencies]` section in the `Cargo.toml` file
+
