@@ -1,5 +1,11 @@
 # Section I - Create a Package
 
+In your main terminal at the bottom of the IDE, run the following command to ensure we are in the `environment` directory.
+
+```text
+cd $HOME/environment
+```
+
 Let first make sure the Rust is install correctly.
 
 ```text
