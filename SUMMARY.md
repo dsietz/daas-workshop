@@ -30,6 +30,7 @@
 * [Module IV - Building a Genesis Microservice for Processing the Sourced Data](module-05/README.md)
   * [Section I - Overview](module-05/section-i-overview.md)
   * [Section II - manifest](module-05/05-section-01.md)
+  * [Section IV - executable](module-05/section-iv-executable.md)
 * [Module V - Building a Provisioning Microservice](module-v-building-a-provisioning-microservice.md)
 * [Module VI - Building a RESTful Endpoint for Publishing Reporting Data](module-06/README.md)
   * [Section I - manifest](module-06/06-section-01.md)
