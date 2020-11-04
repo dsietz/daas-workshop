@@ -13,7 +13,7 @@ path = "src/bin/genesis.rs"
 Next, we need to include the dependent crates into the project. Add the following lines to the `[dependencies]` section in the `Cargo.toml` file
 
 ```text
-rusoto_core = "0.45"
+rusoto_core = "0.43"
 kafka = "0.8"
 ```
 
