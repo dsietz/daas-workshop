@@ -29,8 +29,6 @@ Whenever you use the `cargo build` command, it places the created executable in 
 
 Since it is an executable, simple run the executable from the command terminal.
 
-> NOTE: Example below is for Windows.
-
 ```text
 ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_sourcing 
 ```

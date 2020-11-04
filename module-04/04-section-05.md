@@ -10,6 +10,8 @@ However, we don't need to test the code for the service modules since they have 
 
 Run the following script.
 
+> NOTE: Make sure you are in the environment directory. `cd $HOME/environment`
+
 ```text
 ./scripts/curl-sourcing.sh
 ```
@@ -22,10 +24,10 @@ The response payload should be the following:
 }
 ```
 
-> TIP: You can verify that the data was converted to a DaaSDocument and sent to the Kafka broker by running a Kafka consumer and monitoring the `genesis` topic.
+> TIP: You can verify that the data was converted to a DaaSDocument and sent to the Kafka broker by running a Kafka consumer and monitoring the `genesis` topic. We recommend using a new terminal.
 
 ```text
-$ .\bin\kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic genesis --from-beginning
+$./kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic genesis --from-beginning
 ```
 
 ```text
