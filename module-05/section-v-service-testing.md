@@ -50,6 +50,6 @@ pub const BUCKET_NAME: &'static str = "iapp-archconf-workshop";
 To confirm that the DaaSDocument has been stored in the S3 bucket, run the following command.
 
 ```text
-
+aws s3api list-objects --bucket iapp-archconf-workshop --prefix genesis --query 'Contents[].{Key: Key, Size: Size}'
 ```
 
