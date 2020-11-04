@@ -57,3 +57,9 @@ fn main() {
 }
 ```
 
+When you are finished, the `genesis.rs` file should look like this:
+
+```rust
+
+```
+
