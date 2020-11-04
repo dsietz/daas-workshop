@@ -28,5 +28,25 @@ Next, let's start the Kafka service. In a new terminal \(Window &gt; New termina
 > ./scripts/zookeeper-stop.sh
 > ```
 
+### Step 3
 
+Let's try out Kafka. We will have a producer to send messages to a topic that a consumer will be reading.
+
+**Producer**  In a new terminal \(Window &gt; New terminal or `Alt-T`\) run the following command:
+
+> Ignore any warnings
+
+```text
+kafka_2.13-2.6.0/bin/kafka-console-producer.sh --topic quickstart-events --bootstrap-server localhost:9092
+```
+
+**Consumer** In a new terminal \(Window &gt; New terminal or `Alt-T`\) run the following command:
+
+> Ignore any warnings
+
+```text
+kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --topic quickstart-events --from-beginning --bootstrap-server localhost:9092
+```
+
+We are now ready to broker messages. In the **Producer** terminal, type some text and press `enter`. In the **Consumer** terminal you should see your text getting eread.
 
