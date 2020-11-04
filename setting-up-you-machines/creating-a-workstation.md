@@ -23,7 +23,7 @@ Enter your name as the `Name` of the new environment.
 Select the following:
 
 * Environment type: `Create a new EC2 instance for environment (direct access)`
-* Instance type: `t3.small`
+* Instance type: `m5.large`
 * Platform: `Amazon Linux2`
 * Cost-saving setting: `After a day`
 

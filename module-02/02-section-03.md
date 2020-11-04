@@ -22,18 +22,18 @@ pub fn main() {
 1. Build and run the package 
 
 ```text
-[user@localhost rust-daas]$ cargo run
-   Compiling rust-daas v0.1.0 (C:\workspace\rust-daas)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.67s
-     Running `target\debug\hello_world.exe`
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run
+   Compiling rust-daas v0.1.0 (/home/ec2-user/environment/rust-daas)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.35s
+     Running `target/debug/hello_world`
 Hello World
 ```
 
 > There should now be an executable named **hello\_world** in the /target/debug directory which you can execute directly.
 
 ```text
-[user@localhost rust-daas]$  cd .\target\debug\
-[user@localhost debug]$ ./hello_world
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ cd ./target/debug/
+ArchConfWorkshopUser:~/environment/rust-daas/target/debug (master) $ ./hello_world 
 Hello World
 ```
 
