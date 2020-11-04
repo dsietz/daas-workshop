@@ -73,7 +73,7 @@ use actix_web::middleware::Logger;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    std::env::set_var("DAAS_LOCAL_STORAGE", "C:\\tmp");
+    std::env::set_var("DAAS_LOCAL_STORAGE", "$HOME/local_storage");
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
     
