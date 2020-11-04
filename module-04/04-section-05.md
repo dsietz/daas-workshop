@@ -1,14 +1,18 @@
 # Section V - service testing
 
-> [daas-workshop.postman\_collection.json](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/tests/postman/daas-workshop.postman_collection.json)
+A very powerful feature of the `actix-web` crate is the built in service testing that comes out-of-the-box. We utilized this feature in `web-service-tests.rs` as part of our integrated testing. 
 
-A very powerful feature of the `actix-web` crate is the built in service testing that comes out-of-the-box. We utilized this feature in `web-service-tests.rs` as part of our integrated testing. However, we don't need to test the code for the service modules since they have already been tested in the SDKs. Instead, we will smoke test the the RESTful service is working correctly by using an external utility - [Postman](https://github.com/dsietz/daas-workshop/tree/4242659a82c3d0bb5f75f091e77cac8ea4a369c2/docs/reference-postman.md).
-
-You can [import](https://learning.getpostman.com/docs/postman/collections/data_formats/#importing-postman-data) the `daas-workshop.postman_collection.json` file and perform the service tests.
+However, we don't need to test the code for the service modules since they have already been tested in the SDKs. Instead, we will smoke test the the RESTful service is working correctly by using the `curl` command.
 
 > NOTE: The service should already be running since we had started it in the prior section.
 
-Now you can open the `stage-data` POST request in Postman and monitor the logging on the command line of the running service.
+Run the following script.
+
+> NOTE: Make sure you are in the environment directory. `cd $HOME/environment`
+
+```text
+./scripts/curl-sourcing.sh
+```
 
 The response payload should be the following:
 
@@ -18,10 +22,12 @@ The response payload should be the following:
 }
 ```
 
-> TIP: You can verify that the data was converted to a DaaSDocument and sent to the Kafka broker by running a Kafka consumer and monitoring the `genesis` topic.
+### Kafka genesis Topic
+
+> TIP: You can verify that the data was converted to a DaaSDocument and sent to the Kafka broker by running a Kafka consumer and monitoring the `genesis` topic. We recommend using a new terminal.
 
 ```text
-$ .\bin\kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic genesis --from-beginning
+$./kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic genesis --from-beginning
 ```
 
 ```text
@@ -102,4 +108,12 @@ $ .\bin\kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic gene
    ]
 }
 ```
+
+### Local Storage
+
+Since the DaaS pattern is meant to be a loosely coupled architecture and built-in support of a distributed model, the `DaaSListener` automatically stores a copy of the DaaSDocument in  local storage in case the broker is not available and the records need to be rerun at a later time.
+
+After the first call has been made to the sourcing RESTful service, a directory named `local_storage` till have been created in the main path, \(in this case `ArchConfWorkshopUser:~/environment`\). 
+
+![](../.gitbook/assets/cloud9-06.jpg)
 

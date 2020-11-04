@@ -3,10 +3,9 @@
 The Rust package comes automatically setup with a unit test in the `src/lib.rs` file. You can build and test your package in one command.
 
 ```text
-[user@localhost rust-daas]$ cargo test
-   Compiling rust-daas v0.1.0 (C:\workspace\rust-daas)
-    Finished dev [unoptimized + debuginfo] target(s) in 2.20s
-     Running target\debug\deps\rust_daas-00b27fe51e56875b.exe
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo test
+    Finished test [unoptimized + debuginfo] target(s) in 0.00s
+     Running target/debug/deps/rust_daas-393ccbe957dd9f3a
 
 running 1 test
 test tests::it_works ... ok
@@ -30,20 +29,20 @@ name = "myapp"
 path = "src/lib.rs"
 ```
 
-try to rerun the build and test and notice that the library name changed from **rust-daas** to **daas**.
+try to rerun the build and test and notice that the library name changed from **rust-daas** to **myapp**.
 
 ```text
-[user@localhost rust-daas]$ cargo test
-   Compiling rust-daas v0.1.0 (C:\workspace\rust-daas)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.75s
-     Running target\debug\deps\daas-261fe2059b5b2d4b.exe
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo test
+   Compiling rust-daas v0.1.0 (/home/ec2-user/environment/rust-daas)
+    Finished test [unoptimized + debuginfo] target(s) in 0.58s
+     Running target/debug/deps/myapp-8ec378e59bc20e80
 
 running 1 test
 test tests::it_works ... ok
 
 test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 
-   Doc-tests daas
+   Doc-tests myapp
 
 running 0 tests
 

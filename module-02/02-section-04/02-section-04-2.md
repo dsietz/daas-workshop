@@ -37,22 +37,27 @@ pub mod hello_world;
 > **NOTE**: If you build the code right now, it would raise an error that the module cannot be found.
 >
 > ```text
+> ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo build
+>    Compiling rust-daas v0.1.0 (/home/ec2-user/environment/rust-daas)
 > error[E0583]: file not found for module `hello_world`
->  --> src/lib.rs:6:1
+>  --> src/lib.rs:5:1
 >   |
-> 6 | pub mod hello_world;
+> 5 | pub mod hello_world;
 >   | ^^^^^^^^^^^^^^^^^^^^
 >   |
->   = help: to create the module `hello_world`, create file "src\hello_world.rs"
+>   = help: to create the module `hello_world`, create file "src/hello_world.rs"
 >
-> error: aborting due to previous error
+> error[E0463]: can't find crate for `actix_web`
+>  --> src/lib.rs:1:1
+>   |
+> 1 | extern crate actix_web;
+>   | ^^^^^^^^^^^^^^^^^^^^^^^ can't find crate
 >
-> For more information about this error, try `rustc --explain E0583`.
+> error: aborting due to 2 previous errors
+>
+> Some errors have detailed explanations: E0463, E0583.
+> For more information about an error, try `rustc --explain E0463`.
 > error: could not compile `rust-daas`.
->
-> To learn more, run the command again with --verbose.
-> warning: build failed, waiting for other jobs to finish...
-> error: build failed
 > ```
 
 
