@@ -87,7 +87,19 @@ ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run
      Running `target/debug/hello_world`
 ```
 
-Open your browser and navigate to the URL: `http://localhost:7999/hello/v1/`. You should see the message `Hello World!` On the command line, you will notice that the calls are being logged and printed to the console.
+Since we are working on a virtual machine , we will use `curl` to call our services. 
+
+Run the following script.
+
+> NOTE: Make sure you are in the environment directory. `cd $HOME/environment`
+
+```text
+./scripts/curl-hello.sh
+```
+
+You should see the message `Hello World!` 
+
+On the command line where the service is running, you will notice that the calls are being logged and printed to the console.
 
 ```text
 [2020-11-04T18:36:43Z INFO  actix_web::middleware::logger] 127.0.0.1:50882 curl/7.61.1
