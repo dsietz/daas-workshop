@@ -25,3 +25,15 @@ order.clothing
 order.clothing.iStore
 ```
 
+The genesis service parsed the parameters in the resource path of the RESTful call and created topics accordingly.
+
+`http://localhost:8000/order/clothing/iStore/5000`
+
+This feature allows us to create downstream provisioning services based on the data we wish to process. \(We'll see this in the next module.\)
+
+Let's look at the documents that have been sent to one of these topics.
+
+```text
+./kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic order.clothing --from-beginning
+```
+
