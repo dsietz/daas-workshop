@@ -44,6 +44,6 @@ Hello, world!
 Let's change back the main directory.
 
 ```text
-cd ..
+cd $HOME/environment
 ```
 
