@@ -27,7 +27,7 @@ Finally, we write the main function that will be called.
 ```rust
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    std::env::set_var("DAAS_LOCAL_STORAGE", "C:\\tmp");
+    std::env::set_var("DAAS_LOCAL_STORAGE", "../local_storage");
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
     
@@ -53,10 +53,10 @@ async fn main() -> std::io::Result<()> {
 Since the DaaS Listener that consumes the source data is loosely coupled to the broker, it is important that we keep a local copy of the DaaSDocument in case connection to the broker is lost. We configure the directory path the local storage using the environment variable `DAAS_LOCAL_STORAGE`. If this is not set, the DaaSListener module will use the system's default temporary directory.
 
 ```rust
-std::env::set_var("DAAS_LOCAL_STORAGE", "C:\\tmp");
+std::env::set_var("DAAS_LOCAL_STORAGE", "../local_storage");
 ```
 
-> NOTE: Implementing the `Logger` middleware may violate privacy startegies depending on the exposure and storage of the log entries.
+> NOTE: Implementing the `Logger` middleware may violate privacy strategies depending on the exposure and storage of the log entries.
 
 When you are finished, the `sourcing.rs` file should look like this:
 
@@ -73,7 +73,7 @@ use actix_web::middleware::Logger;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    std::env::set_var("DAAS_LOCAL_STORAGE", "$HOME/local_storage");
+    std::env::set_var("DAAS_LOCAL_STORAGE", "../local_storage");
     std::env::set_var("RUST_LOG", "actix_web=info");
     env_logger::init();
     
