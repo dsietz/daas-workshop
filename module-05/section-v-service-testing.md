@@ -37,3 +37,19 @@ Let's look at the documents that have been sent to one of these topics.
 ./kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic order.clothing --from-beginning
 ```
 
+### S3 Bucket
+
+Before the genesis service send copies of the DaaSDocument downstream to be provisioned, it first stored the original copy in the S3 bucket that was configured in the `gensis.rs` file.
+
+```text
+// NOTE: Modify the Bucket name to match your bucket
+// Credentials are read from the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+pub const BUCKET_NAME: &'static str = "iapp-archconf-workshop";
+```
+
+To confirm that the DaaSDocument has been stored in the S3 bucket, run the following command.
+
+```text
+
+```
+
