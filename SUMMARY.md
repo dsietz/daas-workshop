@@ -5,6 +5,7 @@
   * [Creating a Workstation](setting-up-you-machines/creating-a-workstation.md)
   * [Installing Tools](setting-up-you-machines/installing-tools.md)
   * [Starting Kafka](setting-up-you-machines/starting-kafka.md)
+  * [Congratulations](setting-up-you-machines/congratulations.md)
 * [Module I - Overview of the DaaS Pattern](module-01/README.md)
   * [Section I - The Overall Pattern](module-01/01-section-01.md)
   * [Section II - Data Sourcing](module-01/01-section-02.md)
