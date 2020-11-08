@@ -1,7 +1,5 @@
 # Section V - testing
 
-> [rust-daas.postman\_collection.json](https://github.com/dsietz/rust-daas/blob/master/tests/rust-daas.postman_collection.json)
-
 On the command line, run the `cargo run --bin reporting` command to start the service. \(Or open a new command terminal and start the service using the executable in the target/debug directory\).
 
 ```text

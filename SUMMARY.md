@@ -37,6 +37,7 @@
   * [Section I - Overview](module-v-building-a-provisioning-microservice/section-i-overview.md)
   * [Section II - manifest](module-v-building-a-provisioning-microservice/section-ii-manifest.md)
   * [Seciton III - executable](module-v-building-a-provisioning-microservice/seciton-iii-executable.md)
+  * [Section IV - starting the service](module-v-building-a-provisioning-microservice/section-iv-starting-the-service.md)
 * [Module VI - Building a RESTful Endpoint for Publishing Reporting Data](module-06/README.md)
   * [Section I - manifest](module-06/06-section-01.md)
   * [Section II - library](module-06/06-section-02.md)
