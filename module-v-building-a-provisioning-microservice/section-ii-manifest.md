@@ -10,6 +10,8 @@ name = "myapp_order_clothing"
 path = "src/bin/order_clothing.rs"
 ```
 
+> NOTE: We don't need to add any new crates to the ``[dependencies] section of the `Cargo.toml` file``
+
 We also need to add the following crate to the `[dependencies]` section in the `Cargo.toml` file
 
 ```text
