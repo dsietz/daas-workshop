@@ -42,9 +42,7 @@
 * [Module VI - Building a RESTful Endpoint for Publishing Reporting Data](module-06/README.md)
   * [Section I - Overview](module-06/section-i-overview.md)
   * [Section II - manifest](module-06/06-section-01.md)
-  * [Section III - executable](module-06/06-section-04/README.md)
-    * [Section IV - database](module-06/06-section-04/06-section-04-1.md)
-    * [Section IV - executable](module-06/06-section-04/06-section-04-2.md)
-  * [Section V - testing](module-06/06-section-05.md)
+  * [Section III - executable](module-06/06-section-04.md)
+  * [Section IV - starting the service](module-06/section-iv-starting-the-service.md)
 * [Further Learning](wrapup.md)
 
