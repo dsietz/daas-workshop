@@ -1,6 +1,16 @@
-# Section I - manifest
+# Section II - manifest
 
-> [Cargo.toml](https://github.com/dsietz/rust-daas/blob/master/Cargo.toml)
+> [Cargo.toml](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/Cargo.toml)
 
-We don't require any new dependent external crates, so we can go directly to modifying the `lib.rs` file.
+Let's begin by declaring a new executable for the service that will act as the _data reporting service_. We will do this by adding a `[[bin]]` section to our `Cargo.toml`manifest file.
+
+```text
+[[bin]]
+name = "myapp_reporting"
+path = "src/bin/reporting.rs"
+```
+
+> NOTE: We don't need to add any new crates to the `[dependencies]` section in the `Cargo.toml` file
+
+
 
