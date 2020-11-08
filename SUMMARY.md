@@ -47,5 +47,5 @@
     * [Section IV - database](module-06/06-section-04/06-section-04-1.md)
     * [Section IV - executable](module-06/06-section-04/06-section-04-2.md)
   * [Section V - testing](module-06/06-section-05.md)
-* [Wrap Up](wrapup.md)
+* [Further Learning](wrapup.md)
 
