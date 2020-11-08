@@ -33,7 +33,7 @@ fn main() {
 
 We then add the configuration settings `hosts` and `topic` which used by the service to the main function. 
 
-> NOTE: Normally we would follow coding discipline and avoud hard coding configurations, \(e.g.: `hosts` and `topic` \). However, for this workshop we will skip this practice for the sake of time. If you'd like to implement command line arguments when starting the service, you can use the [`clap`](https://crates.io/crates/clap) crate to do so.
+> NOTE: Normally we would follow coding discipline and avoid hard coding configurations, \(e.g.: `hosts` and `topic` \). However, for this workshop we will skip this practice for the sake of time. If you'd like to implement command line arguments when starting the service, you can use the [`clap`](https://crates.io/crates/clap) crate to do so.
 
 ```rust
     // configuration settings
@@ -90,7 +90,7 @@ However, since we want to first make sure everything is working correctly before
     }
 ```
 
-When we are finished, our `order_clothing` file should look like the follwoing:
+When we are finished, our `order_clothing` file should look like the following:
 
 ```rust
 extern crate daas;
