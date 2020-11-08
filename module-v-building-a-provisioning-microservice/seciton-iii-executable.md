@@ -2,7 +2,7 @@
 
 > order\_clothing.rs
 
-to writing our executable: `src/bin/order_clothing.rs`.
+We're now ready to writing our executable: `src/bin/order_clothing.rs`.
 
 We start by declaring our dependent external crates
 
@@ -22,9 +22,45 @@ use std::sync::mpsc::{channel};
 use serde_json::value::Value;
 ```
 
-Next, we write the main function that will be called.
+Next, we write the wrapper portion of the main function that will be called.
+
+```rust
+fn main() {
+    std::env::set_var("RUST_LOG", "warn");
+    env_logger::init();
+}
+```
+
+We then add the configuration settings `hosts` and `topic` which used by the service to the main function. 
 
 > NOTE: Normally we would follow coding discipline and avoud hard coding configurations, \(e.g.: `hosts` and `topic` \). However, for this workshop we will skip this practice for the sake of time. If you'd like to implement command line arguments when starting the service, you can use the [`clap`](https://crates.io/crates/clap) crate to do so.
+
+```rust
+    // configuration settings
+    let hosts = vec!("localhost:9092".to_string());
+    let topic = "order.clothing".to_string();
+```
+
+The `DaaSProcessorService::start_listening` function takes four parameters that we need to prepare before calling it:
+
+* kafka::consumer::Consumer
+* std::sync::mpsc::Receiver
+* Option for the Kafka client \(which we will set to `None`\)
+* callback function 
+
+```rust
+    // parameters
+    let (tx, rx) = channel();
+    let consumer = Consumer::from_hosts(hosts)
+                            .with_topic(topic.clone())
+                            .with_fallback_offset(FetchOffset::Earliest)
+                            .with_group(format!("{}-consumer", topic.clone()))
+                            .with_offset_storage(GroupOffsetStorage::Kafka)
+                            .create()
+                            .unwrap();
+```
+
+Lastely, we add the section of the main function that will start the `DaaSProcessor`
 
 ```rust
 fn main() {
