@@ -1,6 +1,6 @@
 # Section III.1 - executable
 
-> order\_clothing.rs
+> [order\_clothing.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/order_clothing.rs)
 
 We're now ready to writing our executable: `src/bin/order_clothing.rs`.
 
@@ -61,6 +61,8 @@ The `DaaSProcessorService::start_listening` function takes four parameters that 
 ```
 
 Lastly, we add the section of the main function that will start the `DaaSProcessor`
+
+However, since we want to first make sure everything is working correctly before adding any complex business logic, we will simply print the order number, store name, and order status to the console.
 
 > NOTE: On line 7 we define what to do with the data and on line 8 we return `Ok(1)` notifying the provisioning of the DaaSDocument was successful.
 
