@@ -60,9 +60,48 @@ The `DaaSProcessorService::start_listening` function takes four parameters that 
                             .unwrap();
 ```
 
-Lastely, we add the section of the main function that will start the `DaaSProcessor`
+Lastly, we add the section of the main function that will start the `DaaSProcessor`
+
+> NOTE: On line 7 we define what to do with the data and on line 8 we return `Ok(1)` notifying the provisioning of the DaaSDocument was successful.
 
 ```rust
+    // start the processor
+    let _handler = thread::spawn(move || {
+        DaaSProcessor::start_listening(consumer, &rx, None, |msg: DaaSProcessorMessage, _none_var , _t: Option<&i8>|{
+            let mut doc = msg.doc;
+            let order: Value = serde_json::from_str(&String::from_utf8(doc.data_obj_as_ref().to_vec()).unwrap()).unwrap();
+
+            println!("Order Number {} from the {} has a status of {}...", doc.source_uid, doc.source_name, order.get("status").unwrap());
+            Ok(1)
+        });
+    });
+
+    println!("Clothing Orders processor is running ...");
+    println!("Press [Enter] to stop the Clothing Orders processor.");
+
+    let mut input = String::new();
+    match io::stdin().read_line(&mut input) {
+        Ok(_n) => {
+            DaaSProcessor::stop_listening(&tx);
+        }
+        Err(error) => println!("error: {}", error),
+    }
+```
+
+When we are finished, our `order_clothing` file should look like the follwoing:
+
+```rust
+extern crate daas;
+extern crate kafka;
+
+use std::io;
+use std::thread;
+use kafka::consumer::{Consumer, FetchOffset, GroupOffsetStorage};
+use daas::service::processor::{DaaSProcessor, DaaSProcessorMessage, DaaSProcessorService};
+use std::sync::mpsc::{channel};
+use serde_json::value::Value;
+
+
 fn main() {
     std::env::set_var("RUST_LOG", "warn");
     env_logger::init();
