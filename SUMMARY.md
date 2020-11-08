@@ -34,6 +34,7 @@
   * [Section IV - starting the service](module-05/section-iv-starting-the-service.md)
   * [Section V - service testing](module-05/section-v-service-testing.md)
 * [Module V - Building a Provisioning Microservice](module-v-building-a-provisioning-microservice.md)
+* [Section I - Overview](section-i-overview.md)
 * [Module VI - Building a RESTful Endpoint for Publishing Reporting Data](module-06/README.md)
   * [Section I - manifest](module-06/06-section-01.md)
   * [Section II - library](module-06/06-section-02.md)
