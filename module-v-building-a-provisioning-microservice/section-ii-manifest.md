@@ -10,5 +10,9 @@ name = "myapp_order_clothing"
 path = "src/bin/order_clothing.rs"
 ```
 
-Because we are not in need of any additional cretes, we don't need to make any changes to the `[dependencies]` section in the `Cargo.toml` file
+We also need to add the following crate to the `[dependencies]` section in the `Cargo.toml` file
+
+```text
+json = "0.12.4"
+```
 
