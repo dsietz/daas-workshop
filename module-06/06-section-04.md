@@ -2,8 +2,5 @@
 
 > reporting.rs
 
-We are now ready to write the executable. To do this, we will need to construct the following system components:
-
-* Database objects
-* RESTful microservice
+Since the SDKs contain all the modules we will need for our web service, we can go right to writing our executable: `src/bin/reporting.rs`.
 
