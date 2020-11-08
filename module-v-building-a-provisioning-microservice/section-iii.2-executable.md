@@ -13,7 +13,7 @@ use std::io::prelude::*;
 use serde_json::json;
 ```
 
-`clap` crate. 
+We will also be using a constant to define where our aggregated data records will be stored. Once again, this could be configured as a command line argument using the `clap` crate. 
 
 ```text
 static WORKSPACE_LOCAL_STORAGE: &str = "./workshop_storage";
@@ -81,7 +81,7 @@ let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").repla
                     println!("{}",c);
                     serde_json::from_str(c).unwrap()
                 },
-            };We will also be using a constant to define where our aggregated data records will be stored. Once again, this could be configured as a command line argument using the 
+            }; 
 ```
 
 The final state of your `order_clothing.rs` file should look like the following:
