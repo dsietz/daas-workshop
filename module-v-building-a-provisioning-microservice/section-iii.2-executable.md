@@ -6,7 +6,7 @@ Now that we have confirmed that the service is capturing and parsing the clothin
 
 Let's first being by declaring some new uses
 
-```text
+```rust
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
@@ -17,13 +17,13 @@ We will also be using a constant to define where our aggregated data records wil
 
 > Once again, this could be configured as a command line argument using the `clap` crate.
 
-```text
+```rust
 static WORKSPACE_LOCAL_STORAGE: &str = "./workshop_storage";
 ```
 
 We next need to create some supportive functions _outside_ of the `main` function:
 
-```text
+```rust
 fn create_local_storage() {
     match fs::create_dir_all(WORKSPACE_LOCAL_STORAGE) {
         Ok(_) => {},
@@ -34,7 +34,7 @@ fn create_local_storage() {
 }
 ```
 
-```text
+```rust
 fn read_file(product_name: String) -> Option<Value> {
     let path = format!("{}/clothing-{}.json", WORKSPACE_LOCAL_STORAGE, product_name);
     let mut file = match File::open(path) {
@@ -52,7 +52,7 @@ fn read_file(product_name: String) -> Option<Value> {
 }
 ```
 
-```text
+```rust
 fn save_file(product_name: String, content: String) -> std::io::Result<()>{
     let mut file = File::create(format!("{}/clothing-{}.json", WORKSPACE_LOCAL_STORAGE, product_name))?;
     file.write_all(content.as_bytes())
@@ -63,14 +63,14 @@ With all the `use` declarations and supportive functions in place, we can now st
 
 We first call the function to create the local storage directory when the service starts. This code can be added after the `parameters` section _within_ the `main` function.
 
-```text
+```rust
     // Create the local storage directory for the aggregated data
     create_local_storage();
 ```
 
 To add our business logic, \(inside the `callback` function after the `println` we were using to confirm the service is working correctly\) we add the following lines of code:
 
-```text
+```rust
             match order.get("status").unwrap().as_str().unwrap() {
                 "new" => {
                     let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").replace("/","");
