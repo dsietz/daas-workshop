@@ -78,3 +78,28 @@ Now let's make sure the payload is correct when a product is not specified.
 
 #### Step 3 - Testing the Data Provisioning Flow
 
+We still haven't verified that our DaaS platform is working when sourcing dynamic content. Let's being by sourcing some variable content.
+
+Open the `curl-sourcing.sh` script in the `./scrips` directory so that we are ordering a different product.
+
+```bash
+curl --location --request POST 'http://localhost:8000/order/clothing/iStore/5000' \
+--header 'Data-Usage-Agreement: [{"agreement_name":"billing","location":"www.dua.org/billing.pdf","agreed_dtm": 1553988607}]' \
+--header 'Content-Type: application/json' \
+--header 'Data-Tracker-Chain: W3siaWRlbnRpZmllciI6eyJkYXRhX2lkIjoib3JkZXJ+Y2xvdGhpbmd+aVN0b3JlfjUwMDAiLCJpbmRleCI6MCwidGltZXN0YW1wIjowLCJhY3Rvcl9pZCI6IiIsInByZXZpb3VzX2hhc2giOiIwIn0sImhhc2giOiI3MjI1OTUwMzMyNzI3NjAyMDk1MjEwMjM2ODY3MjE0ODM1ODQ4NSIsIm5vbmNlIjo1fV0=' \
+--header 'Authorization: Basic aXN0b3JlX2FwcDpzZWNyZXQ=' \
+--data-raw '{
+	"product":"wool hat",
+	"quantity": 1,
+	"status":"new"
+}'
+```
+
+Rerun the `./scripts/curl-sourcing.sh` command.
+
+We want to make sure the ordewr has been properly aggregated to our reporting data source, so let's rerun the `./scripts/curl-reporting.sh` command
+
+```javascript
+[{"orders":7,"product":"leather jacket"},{"orders":1,"product":"wool hat"}]
+```
+
