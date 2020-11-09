@@ -1,4 +1,4 @@
-# Section V - adding the business logic
+# Section III.2 - executable
 
 > [order\_clothing.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/order_clothing.rs)
 
@@ -6,7 +6,7 @@ Now that we have confirmed that the service is capturing and parsing the clothin
 
 Let's first being by declaring some new uses
 
-```rust
+```text
 use std::fs;
 use std::fs::File;
 use std::io::prelude::*;
@@ -17,13 +17,13 @@ We will also be using a constant to define where our aggregated data records wil
 
 > Once again, this could be configured as a command line argument using the `clap` crate.
 
-```rust
+```text
 static WORKSPACE_LOCAL_STORAGE: &str = "./workshop_storage";
 ```
 
 We next need to create some supportive functions _outside_ of the `main` function:
 
-```rust
+```text
 fn create_local_storage() {
     match fs::create_dir_all(WORKSPACE_LOCAL_STORAGE) {
         Ok(_) => {},
@@ -34,7 +34,7 @@ fn create_local_storage() {
 }
 ```
 
-```rust
+```text
 fn read_file(product_name: String) -> Option<Value> {
     let path = format!("{}/clothing-{}.json", WORKSPACE_LOCAL_STORAGE, product_name);
     let mut file = match File::open(path) {
@@ -52,7 +52,7 @@ fn read_file(product_name: String) -> Option<Value> {
 }
 ```
 
-```rust
+```text
 fn save_file(product_name: String, content: String) -> std::io::Result<()>{
     let mut file = File::create(format!("{}/clothing-{}.json", WORKSPACE_LOCAL_STORAGE, product_name))?;
     file.write_all(content.as_bytes())
@@ -63,47 +63,32 @@ With all the `use` declarations and supportive functions in place, we can now st
 
 We first call the function to create the local storage directory when the service starts. This code can be added after the `parameters` section _within_ the `main` function.
 
-```rust
+```text
     // Create the local storage directory for the aggregated data
     create_local_storage();
 ```
 
 To add our business logic, \(inside the `callback` function after the `println` we were using to confirm the service is working correctly\) we add the following lines of code:
 
-```rust
-            match order.get("status").unwrap().as_str().unwrap() {
-                "new" => {
-                    let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").replace("/","");
-                    let qnty = order.get("quantity").unwrap().as_u64().unwrap();
-                    let content = match read_file(prd.clone().to_string()){
-                        Some(mut obj) => {
-                            obj["orders"] = json!(obj["orders"].as_u64().unwrap() + qnty);
-                            obj
-                        },
-                        None => {
-                            let c = &format!("{{\"orders\":{:?}}}", qnty); 
-                            println!("{}",c);
-                            serde_json::from_str(c).unwrap()
-                        },
-                    };
-                
-                    match save_file(prd.clone().to_string(), content.to_string()) {
-                        Ok(_ok) => Ok(1),
-                        Err(err) => {
-                            panic!("Warning: Could not save the clothing-{}.json file! : {:?}", prd, err);
-                        },
-                    }
+```text
+            let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").replace("/","");
+            let qnty = order.get("quantity").unwrap().as_u64().unwrap();
+            let content = match read_file(prd.clone().to_string()){
+                Some(mut obj) => {
+                    obj["orders"] = json!(obj["orders"].as_u64().unwrap() + qnty);
+                    obj
                 },
-                _ => {
-                    //do nothing
-                    Ok(1)
-                }
-            }
+                None => {
+                    let c = &format!("{{\"orders\":{:?}}}", qnty); 
+                    println!("{}",c);
+                    serde_json::from_str(c).unwrap()
+                },
+            }; 
 ```
 
 The final state of your `order_clothing.rs` file should look like the following:
 
-```rust
+```text
 extern crate daas;
 extern crate kafka;
 
@@ -180,33 +165,25 @@ fn main() {
 
             println!("Order Number {} from the {} has a status of {}...", doc.source_uid, doc.source_name, order.get("status").unwrap());
             
-            match order.get("status").unwrap().as_str().unwrap() {
-                "new" => {
-                    let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").replace("/","");
-                    let qnty = order.get("quantity").unwrap().as_u64().unwrap();
-                    let content = match read_file(prd.clone().to_string()){
-                        Some(mut obj) => {
-                            obj["orders"] = json!(obj["orders"].as_u64().unwrap() + qnty);
-                            obj
-                        },
-                        None => {
-                            let c = &format!("{{\"orders\":{:?}}}", qnty); 
-                            println!("{}",c);
-                            serde_json::from_str(c).unwrap()
-                        },
-                    };
-                
-                    match save_file(prd.clone().to_string(), content.to_string()) {
-                        Ok(_ok) => Ok(1),
-                        Err(err) => {
-                            panic!("Warning: Could not save the clothing-{}.json file! : {:?}", prd, err);
-                        },
-                    }
+            let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").replace("/","");
+            let qnty = order.get("quantity").unwrap().as_u64().unwrap();
+            let content = match read_file(prd.clone().to_string()){
+                Some(mut obj) => {
+                    obj["orders"] = json!(obj["orders"].as_u64().unwrap() + qnty);
+                    obj
                 },
-                _ => {
-                    //do nothing
-                    Ok(1)
-                }
+                None => {
+                    let c = &format!("{{\"orders\":{:?}}}", qnty); 
+                    println!("{}",c);
+                    serde_json::from_str(c).unwrap()
+                },
+            };
+        
+            match save_file(prd.clone().to_string(), content.to_string()) {
+                Ok(_ok) => Ok(1),
+                Err(err) => {
+                    panic!("Warning: Could not save the clothing-{}.json file! : {:?}", prd, err);
+                },
             }
         });
     });
