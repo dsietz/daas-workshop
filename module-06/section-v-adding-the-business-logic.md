@@ -38,6 +38,15 @@ fn read_file(file: String) -> Option<Value> {
 }
 ```
 
+```rust
+fn extract_product_name(file_path: String) -> String {
+    file_path
+        .replace(&format!("{}/clothing-", WORKSPACE_LOCAL_STORAGE),"")
+        .replace(".json","")
+        .replace("_"," ")
+}
+```
+
 Modify the `index` function with the new business logic.
 
 ```rust
@@ -54,11 +63,10 @@ async fn index(req: HttpRequest) -> HttpResponse {
                 
             for entry in entries.iter() {
                 let file = entry.to_str().unwrap().to_string();
-                let mut obj = read_file(file).unwrap();
+                let mut obj = read_file(file.clone()).unwrap();
                 obj.as_object_mut()
                     .unwrap()
-                    .insert("product".to_string(),serde_json::from_str("product name here")
-                    .unwrap());
+                    .insert("product".to_string(), Value::String(extract_product_name(file)));
                 
                 products.push(obj);
             }
@@ -114,6 +122,13 @@ fn read_file(file: String) -> Option<Value> {
     Some(serde_json::from_str(&contents).unwrap())
 }
 
+fn extract_product_name(file_path: String) -> String {
+    file_path
+        .replace(&format!("{}/clothing-", WORKSPACE_LOCAL_STORAGE),"")
+        .replace(".json","")
+        .replace("_"," ")
+}
+
 async fn index(req: HttpRequest) -> HttpResponse {
     let product = req.match_info().get("product").unwrap_or(ALL_PRODUCTS);
     
@@ -127,11 +142,10 @@ async fn index(req: HttpRequest) -> HttpResponse {
                 
             for entry in entries.iter() {
                 let file = entry.to_str().unwrap().to_string();
-                let mut obj = read_file(file).unwrap();
+                let mut obj = read_file(file.clone()).unwrap();
                 obj.as_object_mut()
                     .unwrap()
-                    .insert("product".to_string(),serde_json::from_str("product name here")
-                    .unwrap());
+                    .insert("product".to_string(), Value::String(extract_product_name(file)));
                 
                 products.push(obj);
             }
