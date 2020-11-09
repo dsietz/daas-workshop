@@ -47,5 +47,5 @@
   * [Section IV - starting the service](module-06/section-iv-starting-the-service.md)
   * [Section V - adding the business logic](module-06/section-v-adding-the-business-logic.md)
   * [Section VI - testing the service](module-06/section-vi-testing-the-service.md)
-* [Further Learning](wrapup.md)
+* [Further Exploration](wrapup.md)
 
