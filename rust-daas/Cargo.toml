@@ -24,6 +24,10 @@ path = "src/bin/genesis.rs"
 name = "myapp_order_clothing"
 path = "src/bin/order_clothing.rs"
 
+[[bin]]
+name = "myapp_reporting"
+path = "src/bin/reporting.rs"
+
 [dependencies]
 log = "0.4"
 env_logger = "0.8"
