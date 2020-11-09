@@ -1,6 +1,12 @@
 # Section I - Overview
 
-Before we begin constructing our first RESTful service for the DaaS Pattern, we need to first review the architecture overview of the DaaS Pattern. We see in the pattern that our DaaS services interact with a **database**, \(we will be using CouchDB\) and a **broker** \(we will be using Kafka\). There is also a **data pattern**, \(a metadata data model\) that causes the DaaS pPattern to become a reactive architecture.
+Before we begin constructing our first RESTful service for the DaaS Pattern, we need to first review the architecture overview of the DaaS Pattern. We see in the pattern that our DaaS services interact with:
+
+* a **persistant data storage**, \(we will be using local storage and a S3 bucket\) 
+* a **broker** \(we will be using Kafka\)
+* a **data pattern**, \(a metadata data model\) 
+
+Together, these components allow the DaaS pPattern to become a reactive architecture.
 
 ![](../.gitbook/assets/overview-02.jpg)
 
