@@ -76,3 +76,5 @@ Now let's make sure the payload is correct when a product is not specified.
 [{"orders":6,"product":"leather jacket"}]
 ```
 
+#### Step 3 - Testing the Data Provisioning Flow
+
