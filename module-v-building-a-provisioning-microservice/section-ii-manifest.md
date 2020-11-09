@@ -4,7 +4,7 @@
 
 Let's begin by declaring a new executable for the service that will act as the _order.clothing provisioning service_. We will do this by adding a `[[bin]]` section to our `Cargo.toml`manifest file.
 
-```text
+```rust
 [[bin]]
 name = "myapp_order_clothing"
 path = "src/bin/order_clothing.rs"

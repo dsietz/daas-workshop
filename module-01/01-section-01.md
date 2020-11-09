@@ -7,5 +7,5 @@ The DaaS architecture provides the agility to scale and adapt the sourcing, prov
 * Applying a plugin model provides self-orchestrated workflow as well as the agility to change our provisioning with the least amount of impact
 * Placing a service-based layer between the data consumers and the provisioned data, provides the flexibility to support consumer based contracts \(e.g.: security, error handling, scope of data set\) 
 
-![DaaS Pattern](../.gitbook/assets/daas-pattern.png)
+![](../.gitbook/assets/overview-01.jpg)
 

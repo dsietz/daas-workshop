@@ -1,4 +1,4 @@
-# Section IV.1 - starting the service
+# Section IV - starting the service
 
 Before we modify the service to perform our desired business logic, \(to aggregate the clothing orders\) we first want to check that the service is consuming the DaaSDcouments and extracting the data correctly.
 
