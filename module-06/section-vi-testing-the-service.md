@@ -82,6 +82,8 @@ We still haven't verified that our DaaS platform is working when sourcing dynami
 
 Open the `curl-sourcing.sh` script in the `./scrips` directory so that we are ordering a different product.
 
+> IMPORTANT: Don't forget to save the file
+
 ```bash
 curl --location --request POST 'http://localhost:8000/order/clothing/iStore/5000' \
 --header 'Data-Usage-Agreement: [{"agreement_name":"billing","location":"www.dua.org/billing.pdf","agreed_dtm": 1553988607}]' \
@@ -97,9 +99,52 @@ curl --location --request POST 'http://localhost:8000/order/clothing/iStore/5000
 
 Rerun the `./scripts/curl-sourcing.sh` command.
 
-We want to make sure the ordewr has been properly aggregated to our reporting data source, so let's rerun the `./scripts/curl-reporting.sh` command
+We want to make sure the order has been properly aggregated to our reporting data source, so let's rerun the `./scripts/curl-reporting.sh` command
 
 ```javascript
-[{"orders":7,"product":"leather jacket"},{"orders":1,"product":"wool hat"}]
+[{"orders":6,"product":"leather jacket"},{"orders":1,"product":"wool hat"}]
 ```
+
+Let's make another change to the `curl-sourcing.sh` script by changing the name of the store from `iStore` to `myStore`
+
+```javascript
+curl --location --request POST 'http://localhost:8000/order/clothing/myStore/5000' \
+--header 'Data-Usage-Agreement: [{"agreement_name":"billing","location":"www.dua.org/billing.pdf","agreed_dtm": 1553988607}]' \
+--header 'Content-Type: application/json' \
+--header 'Data-Tracker-Chain: W3siaWRlbnRpZmllciI6eyJkYXRhX2lkIjoib3JkZXJ+Y2xvdGhpbmd+aVN0b3JlfjUwMDAiLCJpbmRleCI6MCwidGltZXN0YW1wIjowLCJhY3Rvcl9pZCI6IiIsInByZXZpb3VzX2hhc2giOiIwIn0sImhhc2giOiI3MjI1OTUwMzMyNzI3NjAyMDk1MjEwMjM2ODY3MjE0ODM1ODQ4NSIsIm5vbmNlIjo1fV0=' \
+--header 'Authorization: Basic aXN0b3JlX2FwcDpzZWNyZXQ=' \
+--data-raw '{
+	"product":"wool hat",
+	"quantity": 1,
+	"status":"new"
+}'
+```
+
+After you rerun the `./scripts/curl-sourcing.sh` script, you should get a payload returned stating that the data cannot be processed.
+
+```javascript
+{"error":"unable to process data"}
+```
+
+This is because the DaaS SDK automatically verifies that the data being sent is coming from the original source that created it. This is possible because of the `Data Tracker Chain` feature from the `pbd`. 
+
+Update the `curl-sourcing.sh` script to the following, which has a `Data-Tracker-Chain` value that matches the resource path  `order/clothing/myStore/5000`:
+
+```rust
+curl --location --request POST 'http://localhost:8000/order/clothing/myStore/5000' \
+--header 'Data-Usage-Agreement: [{"agreement_name":"billing","location":"www.dua.org/billing.pdf","agreed_dtm": 1582559823}]' \
+--header 'Content-Type: application/json' \
+--header 'Data-Tracker-Chain: W3siaWRlbnRpZmllciI6eyJkYXRhX2lkIjoib3JkZXJ+Y2xvdGhpbmd+bXlTdG9yZX41MDAwIiwiaW5kZXgiOjAsInRpbWVzdGFtcCI6MCwiYWN0b3JfaWQiOiIiLCJwcmV2aW91c19oYXNoIjoiMCJ9LCJoYXNoIjoiMTMzOTkzNzg5NjgyOTI0MTk5NzM2NDIzOTE5MDUwNDU1NjA2Mjc0Iiwibm9uY2UiOjV9XQ==' \
+--header 'Authorization: Basic aXN0b3JlX2FwcDpzZWNyZXQ=' \
+--data-raw '{
+	"product":"wool hat",
+	"quantity": 1,
+	"status":"new"
+}'
+```
+
+You should be able to confirm the following items:
+
+* `{"status":"ok"}` response
+* `./local_storage/clothing/myStore/5000` directory with a your DaaSDocument json file.
 
