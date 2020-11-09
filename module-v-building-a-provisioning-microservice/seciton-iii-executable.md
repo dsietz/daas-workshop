@@ -1,4 +1,4 @@
-# Section III - executable
+# Section III.1 - executable
 
 > [order\_clothing.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/order_clothing.rs)
 
