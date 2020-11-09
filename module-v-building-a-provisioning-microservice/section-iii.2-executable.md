@@ -1,4 +1,4 @@
-# Section III.2 - executable
+# Section V - adding the business logic
 
 > [order\_clothing.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/order_clothing.rs)
 
