@@ -12,5 +12,5 @@ Together, these components allow the DaaS Pattern to become a reactive architect
 
 Based on these system interactions, and applying Object Oriented Design, we quickly realize that there needs to be multiple `modules` in our library to stand up a DaaS platform.
 
-Fortunately, we won't need to build these modules. Because there are SDKs for the [DaaS](https://crates.io/crates/daas) pattern as well as [Privacy by Design](https://crates.io/crates/pbd), we will not need to build out the underlying _object wrappers,_ _data model_ support, or logic to implement common _privacy strategies_.
+Fortunately, we won't need to build these `modules`.  The [DaaS](https://crates.io/crates/daas) SDK provides the underlying _object wrappers,_ _data model_ support, and implement common _privacy strategies_ covered  [Privacy by Design](https://crates.io/crates/pbd).
 
