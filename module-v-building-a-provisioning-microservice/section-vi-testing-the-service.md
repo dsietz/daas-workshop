@@ -1,6 +1,6 @@
 # Section VI - testing the service
 
-### Step 1
+### Step 1 - Checking the services
 
 Let's first make sure all our services are running and restart our order clothing service.
 
@@ -40,5 +40,19 @@ Clothing Orders processor is running ...
 Press [Enter] to stop the Clothing Orders processor.
 Order Number 5000 from the iStore has a status of "new"...
 Retreiving leather_jacket file
+```
+
+### Step 2 - Checking the data storage
+
+There should now be a new directory int he `environment` directory named `workshop_storage`. Inside the `workshop_storage` directory should be a `clothing-leather_jacket.json` file. This is where the aggregated records is sored.
+
+```text
+ls $HOME/environment/workshop_storage -l
+```
+
+```text
+ArchConfWorkshopUser:~/environment $ ls $HOME/environment/workshop_storage -l
+total 4
+-rw-rw-r-- 1 ec2-user ec2-user 12 Nov  9 13:24 clothing-leather_jacket.json
 ```
 
