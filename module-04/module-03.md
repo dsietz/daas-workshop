@@ -2,7 +2,7 @@
 
 Before we begin constructing our first RESTful service for the DaaS Pattern, we need to first review the architecture overview of the DaaS Pattern. We see in the pattern that our DaaS services interact with:
 
-* a **persistant data storage**, \(we will be using local storage and a S3 bucket\) 
+* **microservices** using persistant data storage, \(we will be using local storage and a S3 bucket\) 
 * a **broker** \(we will be using Kafka\)
 * a **data pattern**, \(a metadata data model\) 
 
