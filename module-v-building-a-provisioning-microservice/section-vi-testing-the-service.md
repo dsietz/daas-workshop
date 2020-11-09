@@ -44,7 +44,7 @@ Retreiving leather_jacket file
 
 ### Step 2 - Checking the data storage
 
-There should now be a new directory int he `environment` directory named `workshop_storage`. Inside the `workshop_storage` directory should be a `clothing-leather_jacket.json` file. This is where the aggregated records is sored.
+There should now be a new directory int he `environment` directory named `workshop_storage`. Inside the `workshop_storage` directory should be a `clothing-leather_jacket.json` file. This is where the aggregated records is stored.
 
 ```text
 ls $HOME/environment/workshop_storage -l
