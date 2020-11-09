@@ -58,7 +58,7 @@ total 4
 
 If we look at the `clothing-leater_jacket.json` the JSON document should look something like this:
 
-```text
+```javascript
 {"orders":5}
 ```
 

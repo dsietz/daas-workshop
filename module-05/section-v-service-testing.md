@@ -41,7 +41,7 @@ Let's look at the documents that have been sent to one of these topics.
 
 Before the genesis service send copies of the DaaSDocument downstream to be provisioned, it first stored the original copy in the S3 bucket that was configured in the `gensis.rs` file.
 
-```text
+```rust
 // NOTE: Modify the Bucket name to match your bucket
 // Credentials are read from the environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
 pub const BUCKET_NAME: &'static str = "iapp-archconf-workshop";
@@ -71,7 +71,7 @@ Try to look at the versions
 aws s3api list-object-versions --bucket iapp-archconf-workshop --prefix genesis
 ```
 
-```text
+```javascript
 {
     "Versions": [
         {

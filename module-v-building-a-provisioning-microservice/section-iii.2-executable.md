@@ -103,7 +103,7 @@ To add our business logic, \(inside the `callback` function after the `println` 
 
 The final state of your `order_clothing.rs` file should look like the following:
 
-```text
+```rust
 extern crate daas;
 extern crate kafka;
 
