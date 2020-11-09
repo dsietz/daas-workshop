@@ -157,6 +157,20 @@ You should be able to confirm the following items:
 [2020-11-09T19:52:44Z INFO  daas::service::processor] Brokering document order~clothing~myStore~5000 ... 
 ```
 
+Kafka topics dynamically created
+
+```javascript
+./kafka_2.13-2.6.0/bin/kafka-topics.sh --list --bootstrap-server localhost:9092 
+__consumer_offsets
+genesis
+iStore
+myStore
+order
+order.clothing
+order.clothing.iStore
+order.clothing.myStore
+```
+
 #### Provisioning Processor
 
 ```rust
