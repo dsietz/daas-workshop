@@ -4,7 +4,7 @@
 
 Let's begin by declaring a new executable for the service that will act as the _data reporting service_. We will do this by adding a `[[bin]]` section to our `Cargo.toml`manifest file.
 
-```rust
+```text
 [[bin]]
 name = "myapp_reporting"
 path = "src/bin/reporting.rs"

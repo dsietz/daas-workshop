@@ -6,10 +6,10 @@ We are now ready to start the RESTful service that will act as the data source f
 
 1. Running using `cargo run` command while developing \(local service testing\)
 
-> NOTE: we provide the argument `--bin myapp_sourcing` because there are now multiple executables and must specify which one to run.
+> NOTE: we provide the argument `--bin myapp_reporting` because there are now multiple executables and must specify which one to run.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run --bin myapp_sourcing
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run --bin myapp_reportinging
    Compiling rust-daas v0.1.0 (/home/ec2-user/environment/rust-daas)
     Finished dev [unoptimized + debuginfo] target(s) in 11.71s
      Running `target/debug/myapp_sourcing`
@@ -30,6 +30,6 @@ Whenever you use the `cargo build` command, it places the created executable in 
 Since it is an executable, simple run the executable from the command terminal.
 
 ```text
-ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_sourcing 
+ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_reporting 
 ```
 
