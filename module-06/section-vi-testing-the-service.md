@@ -48,3 +48,31 @@ Retreiving leather_jacket file
 ArchConfWorkshopUser:~/environment $ ./rust-daas/target/debug/myapp_reporting
 ```
 
+### Step 2 - Calling the Reporting RESTful service
+
+Let's first make sure the returned payload is correct based on the resource path.
+
+In an available terminal, run the following script using a specific product
+
+```text
+./scripts/curl-reporting.sh -p "leather jacket"
+```
+
+> NOTE: The JSON is an object for the specific product.
+
+```javascript
+{"orders":6}
+```
+
+Now let's make sure the payload is correct when a product is not specified.
+
+```javascript
+./scripts/curl-reporting.sh
+```
+
+> NOTE: The JSON is an array verses an object
+
+```javascript
+[{"orders":6}]
+```
+

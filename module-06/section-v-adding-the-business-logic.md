@@ -52,9 +52,13 @@ async fn index(req: HttpRequest) -> HttpResponse {
                 .map(|res| res.map(|e| e.path()))
                 .collect::<Result<Vec<_>, io::Error>>().unwrap();
                 
-            for (idx, entry) in entries.iter().enumerate() {
+            for entry in entries.iter() {
                 let file = entry.to_str().unwrap().to_string();
-                let obj = read_file(file).unwrap(); 
+                let mut obj = read_file(file).unwrap();
+                obj.as_object_mut()
+                    .unwrap()
+                    .insert("product".to_string(),serde_json::from_str("product name here")
+                    .unwrap());
                 
                 products.push(obj);
             }
@@ -121,9 +125,13 @@ async fn index(req: HttpRequest) -> HttpResponse {
                 .map(|res| res.map(|e| e.path()))
                 .collect::<Result<Vec<_>, io::Error>>().unwrap();
                 
-            for (idx, entry) in entries.iter().enumerate() {
+            for entry in entries.iter() {
                 let file = entry.to_str().unwrap().to_string();
-                let obj = read_file(file).unwrap(); 
+                let mut obj = read_file(file).unwrap();
+                obj.as_object_mut()
+                    .unwrap()
+                    .insert("product".to_string(),serde_json::from_str("product name here")
+                    .unwrap());
                 
                 products.push(obj);
             }
