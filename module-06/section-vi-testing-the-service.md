@@ -145,6 +145,28 @@ curl --location --request POST 'http://localhost:8000/order/clothing/myStore/500
 
 You should be able to confirm the following items:
 
+#### Sourcing
+
 * `{"status":"ok"}` response
-* `./local_storage/clothing/myStore/5000` directory with a your DaaSDocument json file.
+* `./local_storage/clothing/myStore/5000` directory with a your DaaSDocument json file
+
+#### Genesis Processor
+
+```rust
+[2020-11-09T19:52:44Z INFO  daas::service::processor] Putting document order~clothing~myStore~5000 in S3
+[2020-11-09T19:52:44Z INFO  daas::service::processor] Brokering document order~clothing~myStore~5000 ... 
+```
+
+#### Provisioning Processor
+
+```rust
+Order Number 5000 from the myStore has a status of "new"...
+Retreiving wool_hat file
+```
+
+#### Reporting
+
+```javascript
+[{"orders":7,"product":"leather jacket"},{"orders":2,"product":"wool hat"}]
+```
 
