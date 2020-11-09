@@ -1,6 +1,6 @@
 # Section III.1 - executable
 
-> reporting.rs
+> [reporting.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/reporting.rs)
 
 Since the SDKs contain all the modules we will need for our web service, we can go right to writing our executable: `src/bin/reporting.rs`.
 
