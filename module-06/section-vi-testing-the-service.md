@@ -73,6 +73,6 @@ Now let's make sure the payload is correct when a product is not specified.
 > NOTE: The JSON is an array verses an object
 
 ```javascript
-[{"orders":6}]
+[{"orders":6,"product":"leather jacket"}]
 ```
 
