@@ -33,3 +33,21 @@ Since it is an executable, simple run the executable from the command terminal.
 ArchConfWorkshopUser:~/environment/rust-daas (master) $ ./target/debug/myapp_reporting 
 ```
 
+#### Checking the web service
+
+Let's make sure the web service is working correctly by running the following script in an available terminal.
+
+> Query number of orders for all products
+
+```text
+./scripts/curl-reporting.sh
+```
+
+> Query number of orders for the `leather jacket` product
+
+```text
+./scripts/curl-reporting.sh -p "leather jacket"
+```
+
+
+
