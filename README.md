@@ -8,18 +8,11 @@ description: Hands-On experience building a Data as a Service Platform
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-**IMPORTANT:** Participants need to ...
-
-* Bring their own development devices
-* Have installed Rust Toolchain prior to the workshop
-* Have internet connect during the workshop
-
 ## Developer Slice Setup
 
-* [Rust Language](https://github.com/dsietz/daas-workshop/tree/6308091dd861631def4cb518418d372e904e396e/docs/reference-rust.md)
-* [Postman](https://github.com/dsietz/daas-workshop/tree/6308091dd861631def4cb518418d372e904e396e/docs/reference-postman.md)
+Virtual developer slices will be provided during the workshop.
 
-## Workshop Material
-
-* [Workshop Manual](https://davidsietz.gitbook.io/daas-workshop/)
+{% hint style="info" %}
+virtual workstations kindly hosted by [IAPP.org](https://iapp.org/)
+{% endhint %}
 
