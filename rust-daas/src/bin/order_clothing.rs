@@ -74,25 +74,33 @@ fn main() {
 
             println!("Order Number {} from the {} has a status of {}...", doc.source_uid, doc.source_name, order.get("status").unwrap());
             
-            let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").replace("/","");
-            let qnty = order.get("quantity").unwrap().as_u64().unwrap();
-            let content = match read_file(prd.clone().to_string()){
-                Some(mut obj) => {
-                    obj["orders"] = json!(obj["orders"].as_u64().unwrap() + qnty);
-                    obj
+            match order.get("status").unwrap().as_str().unwrap() {
+                "new" => {
+                    let prd = order.get("product").unwrap().as_str().unwrap().replace(" ","_").replace("/","");
+                    let qnty = order.get("quantity").unwrap().as_u64().unwrap();
+                    let content = match read_file(prd.clone().to_string()){
+                        Some(mut obj) => {
+                            obj["orders"] = json!(obj["orders"].as_u64().unwrap() + qnty);
+                            obj
+                        },
+                        None => {
+                            let c = &format!("{{\"orders\":{:?}}}", qnty); 
+                            println!("{}",c);
+                            serde_json::from_str(c).unwrap()
+                        },
+                    };
+                
+                    match save_file(prd.clone().to_string(), content.to_string()) {
+                        Ok(_ok) => Ok(1),
+                        Err(err) => {
+                            panic!("Warning: Could not save the clothing-{}.json file! : {:?}", prd, err);
+                        },
+                    }
                 },
-                None => {
-                    let c = &format!("{{\"orders\":{:?}}}", qnty); 
-                    println!("{}",c);
-                    serde_json::from_str(c).unwrap()
-                },
-            };
-        
-            match save_file(prd.clone().to_string(), content.to_string()) {
-                Ok(_ok) => Ok(1),
-                Err(err) => {
-                    panic!("Warning: Could not save the clothing-{}.json file! : {:?}", prd, err);
-                },
+                _ => {
+                    //do nothing
+                    Ok(1)
+                }
             }
         });
     });
