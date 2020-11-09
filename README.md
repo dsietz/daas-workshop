@@ -12,7 +12,7 @@ description: Hands-On experience building a Data as a Service Platform
 
 Virtual developer slices will be provided during the workshop.
 
-{% hint style="info" %}
-virtual workstations kindly hosted by [IAPP.org](https://iapp.org/)
-{% endhint %}
+> virtual workstations kindly hosted by [IAPP.org](https://iapp.org/)
+
+
 
