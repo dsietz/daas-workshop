@@ -56,3 +56,9 @@ total 4
 -rw-rw-r-- 1 ec2-user ec2-user 12 Nov  9 13:24 clothing-leather_jacket.json
 ```
 
+If we lok at the `clothing-leater_jacket.json` the json document should look soemthing like this:
+
+```text
+{"orders":5}
+```
+
