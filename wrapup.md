@@ -1,4 +1,12 @@
-# Further Learning
+# Further Exploration
+
+### Pushing Data Downstream
+
+See if you can change the `order_clothing.rs` processor to forward the DaaSDocument to another topic, \(e.g.: billing\) after it finished its data provisioning.
+
+### Multiple Provisioning of a Single Topic
+
+Try to create a second data provisioning microservice, \(e.g.: order\_clothing\_products that collects a list of unique products ordered\) and listens to the same `order.clothing` topic.
 
 ## Helpful Tools
 
