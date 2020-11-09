@@ -43,10 +43,20 @@ Let's make sure the web service is working correctly by running the following sc
 ./scripts/curl-reporting.sh
 ```
 
+```text
+ArchConfWorkshopUser:~/environment $ ./scripts/curl-reporting.sh
+all
+```
+
 > Query number of orders for the `leather jacket` product
 
 ```text
 ./scripts/curl-reporting.sh -p "leather jacket"
+```
+
+```text
+ArchConfWorkshopUser:~/environment $ ./scripts/curl-reporting.sh -p "leather jacket"
+leather_jacket
 ```
 
 
