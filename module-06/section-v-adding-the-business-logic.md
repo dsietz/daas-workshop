@@ -7,8 +7,10 @@ Now that we know the service is reading the path parameter `product` we can add 
 Add additional `use` declarations:
 
 ```rust
+use std::{fs, io};
 use std::fs::File;
 use std::io::prelude::*;
+use serde_json::json;
 use serde_json::value::Value;
 ```
 
@@ -21,11 +23,9 @@ static WORKSPACE_LOCAL_STORAGE: &str = "./workshop_storage";
 Include a supportive function after the outside of the `main` function.
 
 ```rust
-fn read_file(product_name: String) -> Option<Value> {
-    let path = format!("{}/clothing-{}.json", WORKSPACE_LOCAL_STORAGE, product_name);
-    let mut file = match File::open(path) {
+fn read_file(file: String) -> Option<Value> {
+    let mut file = match File::open(file) {
         Ok(f) => {
-            println!("Retreiving {} file", product_name);
             f
         },
         Err(_e) => return None,
