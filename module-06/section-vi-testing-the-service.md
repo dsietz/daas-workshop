@@ -181,6 +181,6 @@ Retreiving wool_hat file
 #### Reporting
 
 ```javascript
-[{"orders":7,"product":"leather jacket"},{"orders":2,"product":"wool hat"}]
+[{"orders":6,"product":"leather jacket"},{"orders":2,"product":"wool hat"}]
 ```
 
