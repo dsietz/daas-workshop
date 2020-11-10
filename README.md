@@ -14,5 +14,9 @@ Virtual developer slices will be provided during the workshop.
 
 > virtual workstations kindly hosted by [IAPP.org](https://iapp.org/)
 
+### Workshop Manual
+
+[https://davidsietz.gitbook.io/daas-workshop/](https://davidsietz.gitbook.io/daas-workshop/)
+
 
 
