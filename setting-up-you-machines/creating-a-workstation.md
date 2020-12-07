@@ -49,7 +49,7 @@ Click `Next step`
 
 ### Step 3
 
-Your review page should look like this \(with your own name as the `Name`\)
+Your review pafge should look like this \(with your own name as the `Name`\)
 
 ![](../.gitbook/assets/cloud9-04.jpg)
 
