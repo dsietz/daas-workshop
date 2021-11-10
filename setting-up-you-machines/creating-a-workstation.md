@@ -37,7 +37,7 @@ Select the following:
 
 ![](../.gitbook/assets/cloud9-02.jpg)
 
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (1).png>)
 
 
 
@@ -53,7 +53,7 @@ Click `Next step`
 
 Your review page should look like this (with your own name as the `Name`)
 
-![](../.gitbook/assets/cloud9-04.jpg)
+![](<../.gitbook/assets/image (2).png>)
 
 Click `Create environment`
 
