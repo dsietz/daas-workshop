@@ -1,6 +1,6 @@
 # Section V - adding the business logic
 
-> [order\_clothing.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/order_clothing.rs)
+> [order\_clothing.rs](../rust-daas/src/bin/order\_clothing.rs)
 
 Now that we have confirmed that the service is capturing and parsing the clothing order data correctly, we can add our business logic to the `main` function.
 
@@ -13,9 +13,9 @@ use std::io::prelude::*;
 use serde_json::json;
 ```
 
-We will also be using a constant to define where our aggregated data records will be stored. 
+We will also be using a constant to define where our aggregated data records will be stored.&#x20;
 
-> Once again, this could be configured as a command line argument using the `clap` crate.
+> Once again, this could be configured as a command line argument using the `clap` crate.&#x20;
 
 ```rust
 static WORKSPACE_LOCAL_STORAGE: &str = "./workshop_storage";
@@ -61,14 +61,14 @@ fn save_file(product_name: String, content: String) -> std::io::Result<()>{
 
 With all the `use` declarations and supportive functions in place, we can now start modifying the `main` function.
 
-We first call the function to create the local storage directory when the service starts. This code can be added after the `parameters` section _within_ the `main` function.
+We first call the function to create the local storage directory when the service starts. This code can be added after the `parameters` section _within _the `main` function.
 
 ```rust
     // Create the local storage directory for the aggregated data
     create_local_storage();
 ```
 
-To add our business logic, \(inside the `callback` function after the `println` we were using to confirm the service is working correctly\) we add the following lines of code:
+To add our business logic, (inside the `callback` function after the `println` we were using to confirm the service is working correctly) we add the following lines of code:
 
 ```rust
             match order.get("status").unwrap().as_str().unwrap() {
@@ -223,4 +223,3 @@ fn main() {
     }    
 }
 ```
-

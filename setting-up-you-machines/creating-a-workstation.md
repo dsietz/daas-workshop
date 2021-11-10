@@ -1,7 +1,7 @@
 # Creating a Workstation
 
 {% hint style="info" %}
-virtual workstations kindly hosted by [IAPP.org](https://iapp.org/)
+virtual workstations kindly hosted by [IAPP.org](https://iapp.org)
 {% endhint %}
 
 First login to the AWS Console. Open your browser and navigate to the AWS Cloud9 Product page:
@@ -18,7 +18,7 @@ Click on the `Create Environment` button
 
 ### Step 1
 
-Enter your name as the `Name` of the new environment. 
+Enter your name as the `Name` of the new environment.&#x20;
 
 > NOTE: Do not use the Name `The Instructor`
 
@@ -31,13 +31,15 @@ Select the following:
 * Environment type: `Create a new EC2 instance for environment (direct access)`
 * Instance type: `m5.large`
 * Platform: `Amazon Linux2`
-* Cost-saving setting: `After a day`
+* Cost-saving setting:` After a day`
+* Network Settings > VPC: `vpc-aws-sandbox`
+* Network Settings > Subnet: `subnet-aws-sandbox-DMZ-subnet-A`
 
 ![](../.gitbook/assets/cloud9-02.jpg)
 
+![](<../.gitbook/assets/image (2).png>)
 
 
-![](../.gitbook/assets/cloud9-03.jpg)
 
 {% hint style="warning" %}
 Please add the following New Tag before clicking `Next step`
@@ -49,7 +51,7 @@ Click `Next step`
 
 ### Step 3
 
-Your review page should look like this \(with your own name as the `Name`\)
+Your review page should look like this (with your own name as the `Name`)
 
 ![](../.gitbook/assets/cloud9-04.jpg)
 
@@ -58,4 +60,3 @@ Click `Create environment`
 After your environment is created, you should in your virtual workspace.
 
 ![](../.gitbook/assets/cloud9-05.jpg)
-

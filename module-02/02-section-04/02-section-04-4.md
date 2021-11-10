@@ -1,12 +1,12 @@
 # Section IV - executable
 
-> [hello-world.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/hello-world.rs)
+> [hello-world.rs](../../rust-daas/src/bin/hello-world.rs)
 
 Once we have created our service and all the tests have passed, we are ready to build out the executable and run our service.
 
 #### Add Log functionality
 
-> Since [Logs](https://12factor.net/logs) is eleventh factor in a 12 Factor Application, we will enable this attribute by implementing automated logging for this RESTful endpoint. by including the [`log`](https://crates.io/crates/log) and [`env_logger`](https://crates.io/crates/env_logger) creates.
+> Since [Logs](https://12factor.net/logs) is eleventh factor in a 12 Factor Application, we will enable this attribute by implementing automated logging for this RESTful endpoint. by including the [`log`](https://crates.io/crates/log) and [`env_logger`](https://crates.io/crates/env\_logger) creates.&#x20;
 
 We start by first adding the `log` and `env_logger` crates to the `Cargo.toml` manifest.
 
@@ -19,7 +19,7 @@ actix-web = "3"
 
 Next, we update the `lib.rs` file to include the logging creates and modules.
 
-We place the `extern crate` declarations for these crates at the top \(so that they are shared in the project\).
+We place the `extern crate` declarations for these crates at the top (so that they are shared in the project).
 
 ```rust
 extern crate log;
@@ -79,38 +79,38 @@ Make sure all your tests are still passing by using the `cargo test` command.
 
 We are now ready to start the RESTful service. There are 2 ways to start the service.
 
-1. Running using `cargo run` command while developing \(local service testing\)
+1. Running using `cargo run` command while developing (local service testing)
 
-```text
+```
 ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.10s
      Running `target/debug/hello_world`
 ```
 
-Since we are working on a virtual machine , we will use `curl` to call our services. 
+Since we are working on a virtual machine , we will use `curl` to call our services.&#x20;
 
 Run the following script.
 
 > NOTE: Make sure you are in the environment directory. `cd $HOME/environment`
 
-```text
+```
 ./scripts/curl-hello.sh
 ```
 
-You should see the message `Hello World!` 
+You should see the message `Hello World!`&#x20;
 
 On the command line where the service is running, you will notice that the calls are being logged and printed to the console.
 
-```text
+```
 [2020-11-04T18:36:43Z INFO  actix_web::middleware::logger] 127.0.0.1:50882 curl/7.61.1
 [2020-11-04T18:36:43Z INFO  actix_web::middleware::logger] 127.0.0.1:50882 "GET /hello/v1/ HTTP/1.1" 200 12 "-" "curl/7.61.1" 0.000212
 ```
 
 To stop the service, use `ctrl` + `c`.
 
-   2. Running using the executable.
+&#x20;  2\. Running using the executable.
 
-```text
+```
 PS C:\workspace\rust-daas> cargo build
     Finished dev [unoptimized + debuginfo] target(s) in 0.37s
 ```
@@ -121,9 +121,8 @@ Since it is an executable, simple run the executable from the command terminal, 
 
 > NOTE: Example below is for Windows.
 
-```text
+```
 C:\workspace\demo\rust-daas\target\debug>hello_world.exe
 [2019-10-23T14:49:19Z INFO  actix_web::middleware::logger] 127.0.0.1:65360 Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36
 [2019-10-23T14:49:19Z INFO  actix_web::middleware::logger] 127.0.0.1:65360 "GET /hello/v1/ HTTP/1.1" 200 12 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36" 0.000948
 ```
-
