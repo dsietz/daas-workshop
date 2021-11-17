@@ -8,7 +8,7 @@ We are now ready to start the microservice that will listen for data on the `gen
 
 > IMPORTANT: Run the executable in a new terminal so that you can have the sourcing and the genesis services running in parallel.
 
-> NOTE: we provide the argument `--bin myapp_genesisg` because there are now multiple executables and must specify which one to run.
+> NOTE: we provide the argument `--bin myapp_genesis` because there are now multiple executables and must specify which one to run.
 
 ```
 ArchConfWorkshopUser:~/environment/rust-daas (master) $ cargo run --bin myapp_genesis
