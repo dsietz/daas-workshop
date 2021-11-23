@@ -1,5 +1,11 @@
 # Section VI - testing the service
 
+{% hint style="warning" %}
+If you are not seeing the correct results when calling the reporting services, double check that you are running all the services from the same relative path, (e.g.: `cargo run` vs `./targt/debug/...`)&#x20;
+
+The WORKSPACE STORAGE variable is relative (`./workshop_storage`) and therefore depends on where you are running the executable.
+{% endhint %}
+
 ### Step 1 - Checking the services
 
 Let's first make sure all our services are running and restart our reporting service.
