@@ -66,7 +66,7 @@ async fn main() -> std::io::Result<()> {
 }
 ```
 
-When we are finished, our `order_clothing` file should look like the following:
+When we are finished, our `reporting` file should look like the following:
 
 ```rust
 extern crate actix_web;
