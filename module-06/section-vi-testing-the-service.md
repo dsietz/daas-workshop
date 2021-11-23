@@ -6,13 +6,13 @@ Let's first make sure all our services are running and restart our reporting ser
 
 In a new terminal, run the following command:
 
-```text
+```
 ./rust-daas/target/debug/myapp_reporting
 ```
 
 In another terminal, let's run the sourcing script.
 
-```text
+```
 ./scripts/curl-sourcing.sh 
 ```
 
@@ -20,21 +20,21 @@ You should see all the services printing to the console about the data they have
 
 #### Sourcing RESTful service
 
-```text
+```
 [2020-11-09T13:24:06Z INFO  actix_web::middleware::logger] 127.0.0.1:33482 curl/7.61.1
 [2020-11-09T13:24:06Z INFO  actix_web::middleware::logger] 127.0.0.1:33482 "POST /order/clothing/iStore/5000 HTTP/1.1" 200 15 "-" "curl/7.61.1" 0.002745
 ```
 
 #### Genesis service
 
-```text
+```
 [2020-11-09T13:24:06Z INFO  daas::service::processor] Putting document order~clothing~iStore~5000 in S3
 [2020-11-09T13:24:06Z INFO  daas::service::processor] Brokering document order~clothing~iStore~5000 ... 
 ```
 
 #### Order Clothing service
 
-```text
+```
 ArchConfWorkshopUser:~/environment $ ./rust-daas/target/debug/myapp_order_clothing 
 Clothing Orders processor is running ...
 Press [Enter] to stop the Clothing Orders processor.
@@ -44,7 +44,7 @@ Retreiving leather_jacket file
 
 #### Reporting service
 
-```text
+```
 ArchConfWorkshopUser:~/environment $ ./rust-daas/target/debug/myapp_reporting
 ```
 
@@ -54,14 +54,14 @@ Let's first make sure the returned payload is correct based on the resource path
 
 In an available terminal, run the following script using a specific product
 
-```text
+```
 ./scripts/curl-reporting.sh -p "leather jacket"
 ```
 
 > NOTE: The JSON is an object for the specific product.
 
 ```javascript
-{"orders":6}
+{"orders":1}
 ```
 
 Now let's make sure the payload is correct when a product is not specified.
@@ -73,7 +73,7 @@ Now let's make sure the payload is correct when a product is not specified.
 > NOTE: The JSON is an array verses an object
 
 ```javascript
-[{"orders":6,"product":"leather jacket"}]
+[{"orders":1,"product":"leather jacket"}]
 ```
 
 #### Step 3 - Testing the Data Provisioning Flow
@@ -102,7 +102,7 @@ Rerun the `./scripts/curl-sourcing.sh` command.
 We want to make sure the order has been properly aggregated to our reporting data source, so let's rerun the `./scripts/curl-reporting.sh` command
 
 ```javascript
-[{"orders":6,"product":"leather jacket"},{"orders":1,"product":"wool hat"}]
+[{"orders":1,"product":"leather jacket"},{"orders":1,"product":"wool hat"}]
 ```
 
 Let's make another change to the `curl-sourcing.sh` script by changing the name of the store from `iStore` to `myStore`
@@ -126,7 +126,7 @@ After you rerun the `./scripts/curl-sourcing.sh` script, you should get a payloa
 {"error":"unable to process data"}
 ```
 
-This is because the DaaS SDK automatically verifies that the data being sent is coming from the original source that created it. This is possible because of the `Data Tracker Chain` feature from the `pbd`. 
+This is because the DaaS SDK automatically verifies that the data being sent is coming from the original source that created it. This is possible because of the `Data Tracker Chain` feature from the `pbd`.&#x20;
 
 Update the `curl-sourcing.sh` script to the following, which has a `Data-Tracker-Chain` value that matches the resource path  `order/clothing/myStore/5000`:
 
@@ -183,4 +183,3 @@ Retreiving wool_hat file
 ```javascript
 [{"orders":6,"product":"leather jacket"},{"orders":2,"product":"wool hat"}]
 ```
-

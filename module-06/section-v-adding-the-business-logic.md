@@ -1,6 +1,6 @@
 # Section V - adding the business logic
 
-> [reporting.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/reporting.rs)
+> [reporting.rs](../rust-daas/src/bin/reporting.rs)
 
 Now that we know the service is reading the path parameter `product` we can add our business logic to retrieve the JSON payload.
 
@@ -23,6 +23,21 @@ static WORKSPACE_LOCAL_STORAGE: &str = "./workshop_storage";
 Include a supportive function after the outside of the `main` function.
 
 ```rust
+fn extract_product_name(file_path: String) -> String {
+    file_path
+        .replace(&format!("{}/clothing-", WORKSPACE_LOCAL_STORAGE),"")
+        .replace(".json","")
+        .replace("_"," ")
+}
+```
+
+```rust
+fn product_file(product_name: String) -> String {
+    format!("{}/clothing-{}.json", WORKSPACE_LOCAL_STORAGE, product_name.replace(" ","_")) 
+}
+```
+
+```rust
 fn read_file(file: String) -> Option<Value> {
     let mut file = match File::open(file) {
         Ok(f) => {
@@ -38,20 +53,11 @@ fn read_file(file: String) -> Option<Value> {
 }
 ```
 
-```rust
-fn extract_product_name(file_path: String) -> String {
-    file_path
-        .replace(&format!("{}/clothing-", WORKSPACE_LOCAL_STORAGE),"")
-        .replace(".json","")
-        .replace("_"," ")
-}
-```
-
 Modify the `index` function with the new business logic.
 
 ```rust
 async fn index(req: HttpRequest) -> HttpResponse {
-    let product = req.match_info().get("product").unwrap_or(ALL_PRODUCTS);
+   let product = req.match_info().get("product").unwrap_or(ALL_PRODUCTS);
     
    let content = match &product {
         &"all" => {
@@ -74,12 +80,12 @@ async fn index(req: HttpRequest) -> HttpResponse {
             json!(products).to_string()
         },
         _ => {
-            match read_file(product.to_string()) {
+            match read_file(product_file(product.to_string())) {
                 Some(cntnt) => {
                     cntnt.to_string()
                 },
                 None => {
-                    "{\"orders\":6}".to_string()
+                    "Product file missing".to_string()
                 },
             }
         },
@@ -108,6 +114,17 @@ use serde_json::value::Value;
 static ALL_PRODUCTS: &str = "all";
 static WORKSPACE_LOCAL_STORAGE: &str = "./workshop_storage";
 
+fn extract_product_name(file_path: String) -> String {
+    file_path
+        .replace(&format!("{}/clothing-", WORKSPACE_LOCAL_STORAGE),"")
+        .replace(".json","")
+        .replace("_"," ")
+}
+
+fn product_file(product_name: String) -> String {
+    format!("{}/clothing-{}.json", WORKSPACE_LOCAL_STORAGE, product_name.replace(" ","_")) 
+}
+
 fn read_file(file: String) -> Option<Value> {
     let mut file = match File::open(file) {
         Ok(f) => {
@@ -120,13 +137,6 @@ fn read_file(file: String) -> Option<Value> {
     file.read_to_string(&mut contents).unwrap();
     
     Some(serde_json::from_str(&contents).unwrap())
-}
-
-fn extract_product_name(file_path: String) -> String {
-    file_path
-        .replace(&format!("{}/clothing-", WORKSPACE_LOCAL_STORAGE),"")
-        .replace(".json","")
-        .replace("_"," ")
 }
 
 async fn index(req: HttpRequest) -> HttpResponse {
@@ -153,12 +163,12 @@ async fn index(req: HttpRequest) -> HttpResponse {
             json!(products).to_string()
         },
         _ => {
-            match read_file(product.to_string()) {
+            match read_file(product_file(product.to_string())) {
                 Some(cntnt) => {
                     cntnt.to_string()
                 },
                 None => {
-                    "{\"orders\":6}".to_string()
+                    "Product file missing".to_string()
                 },
             }
         },
@@ -184,4 +194,3 @@ async fn main() -> std::io::Result<()> {
     .await
 }
 ```
-
