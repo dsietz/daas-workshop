@@ -1,6 +1,6 @@
 # Section III - executable
 
-> [reporting.rs](https://github.com/dsietz/daas-workshop/blob/master/rust-daas/src/bin/reporting.rs)
+> [reporting.rs](../rust-daas/src/bin/reporting.rs)
 
 Since the SDKs contain all the modules we will need for our web service, we can go right to writing our executable: `src/bin/reporting.rs`.
 
@@ -66,3 +66,46 @@ async fn main() -> std::io::Result<()> {
 }
 ```
 
+When we are finished, our `order_clothing` file should look like the following:
+
+```rust
+extern crate actix_web;
+
+use actix_web::{web, App, HttpRequest, HttpServer, HttpResponse};
+use actix_web::http::{StatusCode};
+use actix_web::middleware::Logger;
+
+static ALL_PRODUCTS: &str = "all";
+
+async fn index(req: HttpRequest) -> HttpResponse {
+    let product = req.match_info().get("product").unwrap_or(ALL_PRODUCTS);
+    
+   let content = match &product {
+        &"all" => {
+            ALL_PRODUCTS.to_string()
+        },
+        _ => {
+            product.to_string()
+        },
+    };
+    
+    HttpResponse::build(StatusCode::OK)
+        .body(&content)
+}
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    std::env::set_var("RUST_LOG", "actix_web=info");
+    env_logger::init();
+    
+    HttpServer::new(|| {
+        App::new()
+            .wrap(Logger::default())
+            .wrap(Logger::new("%a %{User-Agent}i"))
+            .route("/{product}", web::get().to(index))
+    })
+    .bind("localhost:8001")?
+    .run()
+    .await
+}
+```
